@@ -1,5 +1,9 @@
 .header {
   padding: 10px 0px;
-  background-color: var(--general);
-  border-bottom: 1px #fff;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  border-bottom: 1px solid #fff;
 }

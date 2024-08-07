@@ -1,7 +1,9 @@
+import { PensionAnnuity } from "@/widgets/PensionAnnuity";
+
 export const MainPage = () => {
   return (
-    <section>
-      
-    </section>
-  )
-}
+    <>
+      <PensionAnnuity />
+    </>
+  );
+};

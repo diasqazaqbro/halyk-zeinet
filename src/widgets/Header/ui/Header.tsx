@@ -1,4 +1,3 @@
-import cn from "classnames";
 import styles from "./styles.module.scss";
 import LogoDesktop from "@/shared/ui/Icon/Logo/LogoDesk";
 import { Navbar } from "@/entities/Navbar";

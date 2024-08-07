@@ -1,0 +1,28 @@
+.heading {
+  &_1 {
+    color: #fff;
+
+    /* Heading1 */
+    font-size: 5.375rem;
+    line-height: normal;
+    font-weight: 700;
+  }
+
+  &_2 {
+    color: #fff;
+
+    /* Heading2 */
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &_3 {
+    color: #fff;
+
+    /* h3 */
+    font-size: 2.375rem;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
