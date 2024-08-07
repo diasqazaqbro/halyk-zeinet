@@ -16,7 +16,7 @@ const PensionAnnuity = () => {
             Оставить заявку
           </Button>
         </div>
-        <div className="">
+        <div className="mb-[-1px]">
           <Image
             className={styles.img}
             width={742}
