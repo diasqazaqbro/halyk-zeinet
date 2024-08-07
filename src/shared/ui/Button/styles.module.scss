@@ -1,0 +1,13 @@
+.button {
+  background-color: var(--main);
+  border-radius: 60px;
+  color: var(--black);
+}
+
+.size {
+  &_m {
+    padding: 10px 63px;
+    font-size: 22px;
+    line-height: normal;
+  }
+}

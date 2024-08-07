@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./styles/globals.css";
+import "./styles/globals.scss";
+import { Header } from "@/widgets/Header";
 
 const SfPro = localFont({
-  src: "../../public/fonts/SFUIText-Regular.ttf",
+  src: "../../public/fonts/SF-Pro.ttf",
   display: "swap",
 });
 
@@ -19,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={SfPro.className}>{children}</body>
+      <body className={SfPro.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,22 +1,26 @@
 import React from "react";
+import cn from "classnames";
 import styles from "./styles.module.scss";
 
 export enum ButtonSize {
   M = "size_m",
   L = "size_l",
   XL = "size_xl",
-  Modal = "size_modal",
-  Project = "size_project",
 }
 
 interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode | string;
+  className?: string;
   size?: ButtonSize;
 }
 
-const Button = ({ children, ...rest }: IButton) => {
+const Button = ({ children, className, size, ...rest }: IButton) => {
   return (
-    <button type="submit" {...rest}>
+    <button
+      type="submit"
+      className={cn(className, size && styles[size], styles.button)}
+      {...rest}
+    >
       {children}
     </button>
   );
