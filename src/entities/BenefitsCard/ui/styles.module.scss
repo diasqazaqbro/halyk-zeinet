@@ -1,0 +1,36 @@
+.card {
+  padding: 25px 17px 31px 25px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  flex: 1;
+
+  &__right {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__title,
+  &__desc {
+    transition: color 0.5s ease;
+  }
+
+  &:hover {
+    background: #fff;
+
+    .card__title {
+      color: var(--general);
+    }
+
+    .card__desc {
+      color: var(--general);
+    }
+
+    .card__right svg path {
+      fill: var(--general);
+    }
+  }
+}

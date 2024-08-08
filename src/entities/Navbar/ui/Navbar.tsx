@@ -10,10 +10,15 @@ export default function Navbar() {
     { name: "Калькулятор", link: "/" },
     { name: "FAQ", link: "/" },
   ];
+
   return (
     <nav className={cn("flex justify-center items-center", styles.nav)}>
       {navs.map((nav, index) => (
-        <Link key={index} className={styles.nav__link} href={nav.link}>
+        <Link
+          key={index}
+          className={cn(styles.nav__link, "fill")}
+          href={nav.link}
+        >
           {nav.name}
         </Link>
       ))}
