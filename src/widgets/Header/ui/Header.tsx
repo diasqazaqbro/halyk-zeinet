@@ -3,13 +3,19 @@ import LogoDesktop from "@/shared/ui/Icon/Logo/LogoDesk";
 import { Navbar } from "@/entities/Navbar";
 import Button, { ButtonSize } from "@/shared/ui/Button/Button";
 import Link from "next/link";
+import LogoMob from "@/shared/ui/Icon/Logo/LogoMob";
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <div className="container flex items-center justify-between">
         <Link href={"/"}>
-          <LogoDesktop />
+          <div className="hidden sm:block">
+            <LogoMob />
+          </div>
+          <div className="sm:hidden">
+            <LogoDesktop />
+          </div>
         </Link>
         <div className="flex items-center" style={{ gap: "2.25rem" }}>
           <Navbar />
