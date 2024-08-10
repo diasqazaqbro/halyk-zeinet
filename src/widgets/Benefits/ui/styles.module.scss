@@ -28,6 +28,10 @@
 
 @media (max-width: 768px) {
   .benefits {
+    &__title {
+      width: 100%;
+      text-align: center;
+    }
 
     &__card {
       display: flex;
