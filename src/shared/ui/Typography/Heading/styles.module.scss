@@ -34,3 +34,23 @@
   font-weight: 400;
   line-height: normal;
 }
+
+@media (max-width: 768px) {
+  .heading {
+    &_1 {
+      font-size: 2.375rem;
+    }
+
+    &_2 {
+      font-size: 1.25rem;
+    }
+
+    &_3 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}

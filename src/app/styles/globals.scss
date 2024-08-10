@@ -6,6 +6,11 @@
 html {
   scroll-behavior: smooth;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
   overflow-x: hidden;
   background-color: #fff;
@@ -20,4 +25,18 @@ body {
   margin: 0 auto;
   padding-left: 135px;
   padding-right: 135px;
+
+  @media (max-width: 480px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

@@ -13,7 +13,14 @@ export default function Header() {
         </Link>
         <div className="flex items-center" style={{ gap: "2.25rem" }}>
           <Navbar />
-          <Button size={ButtonSize.M}>Звонок</Button>
+          <Button className={styles.header__btn} size={ButtonSize.M}>
+            Звонок
+          </Button>
+        </div>
+        <div className={styles.burger}>
+          <div className={styles.line}></div>
+          <div className={styles.line}></div>
+          <div className={styles.line}></div>
         </div>
       </div>
     </header>

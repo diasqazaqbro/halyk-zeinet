@@ -25,3 +25,13 @@
     gap: 1.875rem;
   }
 }
+
+@media (max-width: 768px) {
+  .benefits {
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

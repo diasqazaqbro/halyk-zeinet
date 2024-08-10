@@ -4,6 +4,36 @@
   backdrop-filter: blur(12px);
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 100;
   border-bottom: 1px solid #fff;
+
+  &__btn {
+    display: block;
+  }
+}
+
+.burger {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .header {
+    &__btn {
+      display: none;
+    }
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    .line {
+      border-radius: 10px;
+      background: #fff;
+      width: 33px;
+      height: 5px;
+    }
+  }
 }
