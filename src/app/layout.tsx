@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./styles/globals.scss";
 import { Header } from "@/widgets/Header";
+import { Footer } from "@/widgets/Footer";
 
 const SfPro = localFont({
   src: "../../public/fonts/SF-Pro.ttf",
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={SfPro.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
