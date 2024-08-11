@@ -3,7 +3,7 @@ import { Faq } from "@/widgets/FAQ";
 import { Oppv } from "@/widgets/Oppv";
 import { PensionAnnuity } from "@/widgets/PensionAnnuity";
 
-export const MainPage = () => {
+export default function MainPage() {
   return (
     <>
       <PensionAnnuity />
@@ -12,4 +12,4 @@ export const MainPage = () => {
       <Faq />
     </>
   );
-};
+}
