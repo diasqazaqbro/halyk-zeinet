@@ -10,17 +10,143 @@
       content: "";
       position: absolute;
       top: 23.5%;
-      width: 450px;
-      height: 450px;
+      width: 400px;
+      height: 400px;
       background-color: #fff;
       border-radius: 50%;
       z-index: -1;
-      left: 18.3%;
+      left: 25%;
+    }
+  }
+
+  &__text {
+    text-align: right;
+    font-size: 36px;
+    width: 50%;
+    line-height: normal;
+  }
+
+  &__underleft {
+    display: flex;
+    gap: 5rem;
+    position: relative;
+    top: -15%;
+    left: 5%;
+  }
+}
+
+.coin {
+  &_1 {
+    background-image: url("./assets/coin1.png");
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    top: 13%;
+    left: 60%;
+  }
+  &_2 {
+    background-image: url("./assets/coin2.png");
+    position: absolute;
+    width: 430px;
+    height: 433px;
+    top: 39%;
+    left: 80%;
+    z-index: 2;
+  }
+  &_3 {
+    width: 121px;
+    height: 125px;
+    background-image: url("./assets/coin3.png");
+    filter: blur(3.5061225891px);
+    position: absolute;
+    top: 0%;
+    left: 74%;
+  }
+}
+
+.who__is {
+  position: absolute;
+  top: 78%;
+  left: -8%;
+  z-index: 2;
+
+  button {
+    cursor: auto;
+    border-radius: 57px;
+    width: 200px;
+    height: 74px;
+    transform: rotate(15deg);
+    font-size: 42px;
+    color: var(--black);
+    background-color: #fff;
+
+    &:before {
+      content: "";
+      background-image: url("./assets/Vector2.png");
+      position: absolute;
+      top: -281%;
+      left: 28%;
+      width: 309px;
+      height: 224px;
+      transform: rotate(336deg);
+      z-index: -1;
+    }
+  }
+}
+
+.btn {
+  width: 80px;
+
+  svg {
+    transition: all 0.3s ease-in-out;
+
+    rect,
+    path {
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &:hover {
+    svg {
+      rect {
+        fill: var(--general);
+      }
+      path {
+        stroke: #fff;
+      }
     }
   }
 }
 
 .img {
-  max-width: 700px;
+  max-width: 130%;
   position: relative;
+}
+
+.btn__help {
+  border-radius: 57px;
+  background: #fff;
+  transform: rotate(15.025deg);
+  color: #000;
+  width: 161.168px;
+  cursor: text;
+  height: 59.632px;
+  font-size: 18px;
+  &:before {
+    content: "";
+    background-image: url("./assets/Vector.png");
+    position: absolute;
+    top: 95%;
+    left: -58%;
+    width: 168px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 1270px) {
+  .oppv {
+    &__underleft {
+      top: -5%;
+    }
+  }
 }
