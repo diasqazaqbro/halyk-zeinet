@@ -66,6 +66,7 @@
 }
 
 .who__is {
+  display: block;
   position: absolute;
   top: 78%;
   left: -8%;
@@ -144,6 +145,20 @@
   }
 }
 
+.mobcoin {
+  &_1 {
+    display: none;
+  }
+  &_2 {
+    display: none;
+  }
+}
+
+.btn__dias {
+  cursor: default;
+  display: none;
+}
+
 @media (max-width: 1270px) {
   .oppv {
     &__underleft {
@@ -154,6 +169,32 @@
 
 .btn__mob {
   display: none;
+
+  svg {
+    transition: all 0.3s ease-in-out;
+
+    rect,
+    path {
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &:hover {
+    svg {
+      rect {
+        fill: var(--main);
+      }
+      path {
+        stroke: #000;
+      }
+    }
+  }
+}
+
+.oppv__mobtext {
+  display: none;
+  font-size: 14px;
+  line-height: normal;
 }
 
 @media (max-width: 768px) {
@@ -163,15 +204,57 @@
       &:after {
         content: "";
         position: absolute;
-        top: 49.5%;
-        width: 112%;
+        top: 52.5%;
+        width: 130%;
         height: 100%;
         background-color: #fff;
         border-radius: 50%;
         z-index: -1;
-        left: -6.5%;
+        left: -14.5%;
         overflow: hidden;
       }
+    }
+    &__underleft {
+      display: none;
+    }
+
+    &__mobtext {
+      display: block;
+      width: 30%;
+      top: 12.5rem;
+      position: absolute;
+      left: 42%;
+    }
+  }
+
+  .who__is {
+    display: none;
+  }
+
+  .btn__dias {
+    display: block;
+    position: absolute;
+    top: 2.5rem;
+    transform: rotate(-7.887deg);
+    font-size: 18px;
+    line-height: normal;
+    background-color: #fff;
+    border-radius: 57px;
+    color: #000;
+    padding: 6px 16px;
+    left: 76%;
+    z-index: 2;
+
+    &:after {
+      content: "";
+      background-image: url("./assets/Vector3.png");
+      width: 43px;
+      height: 177px;
+      position: absolute;
+      top: 62%;
+      left: -60%;
+      z-index: -1;
+      transform: rotate(13deg);
     }
   }
 
@@ -189,23 +272,155 @@
     position: relative;
     top: 3rem;
   }
+
+  .mobcoin {
+    &_1 {
+      background-image: url("./assets/MobCoin1.png");
+      width: 253px;
+      height: 256px;
+      display: block;
+      position: absolute;
+      top: 33%;
+      left: -16%;
+      z-index: 2;
+      transform: translate(1%, 3%);
+    }
+
+    &_2 {
+      background-image: url("./assets/MobCoin2.png");
+      display: block;
+      width: 183px;
+      height: 186px;
+      position: absolute;
+      top: 44%;
+      left: 70%;
+      z-index: 2;
+    }
+  }
+
+  .coin {
+    &_1 {
+      display: none;
+    }
+    &_2 {
+      display: none;
+    }
+    &_3 {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .oppv {
+    &__mobtext {
+      display: block;
+      width: 30%;
+      top: 14.5rem;
+      position: absolute;
+      left: 42%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .oppv {
+    &__mobtext {
+      display: block;
+      width: 31%;
+      position: absolute;
+      top: 16.5rem;
+      left: 35%;
+    }
+  }
+  .mobcoin {
+    &_1 {
+      width: 253px;
+      height: 256px;
+      display: block;
+      position: absolute;
+      top: 24%;
+      left: -37%;
+      z-index: 2;
+      transform: translate(1%, 3%);
+    }
+  }
+
+  .btn__dias {
+    top: 2.2rem;
+    &:after {
+      content: "";
+      background-image: url("./assets/Vector3.png");
+      width: 42px;
+      height: 177px;
+      position: absolute;
+      top: -63%;
+      left: -24%;
+      z-index: -1;
+      transform: rotate(38deg);
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .mobcoin {
+    &_1 {
+      display: block;
+      position: absolute;
+      top: 14%;
+      left: -49%;
+      z-index: 2;
+      transform: translate(10px, 10px);
+    }
+
+    &_2 {
+      display: block;
+      position: absolute;
+      top: 44%;
+      left: 70%;
+      z-index: 2;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .mobcoin {
+    &_1 {
+      display: block;
+      position: absolute;
+      top: 13%;
+      left: -55%;
+      z-index: 2;
+      transform: translate(10px, 10px);
+    }
+  }
 }
 
 @media (max-width: 360px) {
   .oppv {
     padding-top: 25px;
+
     &__right {
       &:after {
         content: "";
         position: absolute;
         top: 53.5%;
-        width: 113%;
+        width: 130%;
         height: 100%;
         background-color: #fff;
         border-radius: 50%;
         z-index: -1;
-        left: -6.5%;
+        left: -14.5%;
       }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .oppv {
+    &__mobtext {
+      top: 20.5rem;
+      width: 50%;
     }
   }
 }
