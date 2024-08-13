@@ -362,6 +362,12 @@
   }
 }
 
+@media (max-width: 405px) {
+  .oppv__mobtext {
+    top: 17.5rem;
+  }
+}
+
 @media (max-width: 375px) {
   .mobcoin {
     &_1 {
