@@ -1,0 +1,36 @@
+.root {
+  padding-top: 50px;
+  padding-bottom: 126px;
+  background-image: linear-gradient(
+      rgba(0, 132, 110, 0.8),
+      rgba(0, 132, 110, 0.8)
+    ),
+    url("/bg5.png");
+  background-size: cover;
+  background-position: center center;
+  opacity: 1;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  @media (max-width: 480px) {
+    .root {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .flex {
+      flex-direction: column;
+    }
+  }
+}
+
+.inner {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
