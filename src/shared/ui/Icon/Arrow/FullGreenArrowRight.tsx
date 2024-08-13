@@ -11,8 +11,8 @@ export default function FullGreenArrowRight() {
       <path
         d="M35 27.5L47.2929 39.7929C47.6834 40.1834 47.6834 40.8166 47.2929 41.2071L35 53.5"
         stroke="white"
-        stroke-width="4"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeLinecap="round"
       />
     </svg>
   );
