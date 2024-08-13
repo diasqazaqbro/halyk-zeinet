@@ -122,7 +122,28 @@
 
 .img {
   max-width: 130%;
+  animation: none;
   position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.img.slide-out {
+  animation: slideLeftAndDisappear 1s forwards;
+}
+
+@keyframes slideLeftAndDisappear {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.slideOut {
+  animation: slideLeftAndDisappear 1s forwards;
 }
 
 .btn__help {

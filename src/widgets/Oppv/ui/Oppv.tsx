@@ -1,13 +1,19 @@
+"use client";
 import React from "react";
 import styles from "./styles.module.scss";
 import Heading from "@/shared/ui/Typography/Heading/Heading";
 import { OppvData } from "@/shared/data/OppvData";
 import Image from "next/image";
-import Button from "@/shared/ui/Button/Button";
 import GreenArrowRight from "@/shared/ui/Icon/Arrow/GreenArrowRight";
 import OrangeArrowRight from "@/shared/ui/Icon/Arrow/OrangeArrowRight";
 
 const Oppv = () => {
+  const [isSlidingOut, setIsSlidingOut] = React.useState(false);
+
+  const handleClick = () => {
+    setIsSlidingOut(true);
+  };
+
   return (
     <section className={styles.oppv}>
       <div className="container flex justify-between relative mmd:flex-col">
@@ -33,7 +39,11 @@ const Oppv = () => {
                 Нажми сюда
               </button>
             </div>
-            <button className={styles.btn} aria-label="Подробнее">
+            <button
+              className={styles.btn}
+              onClick={handleClick}
+              aria-label="Подробнее"
+            >
               <GreenArrowRight />
             </button>
             <p className={styles.oppv__text}>И сейчас он вам расскажет</p>
@@ -43,9 +53,7 @@ const Oppv = () => {
           <div className={styles.coin_3} />
           <div className={styles.mobcoin_1} />
           <div className={styles.mobcoin_2} />
-          <button className={styles.btn__dias}>
-            Диас
-          </button>
+          <button className={styles.btn__dias}>Диас</button>
           <div className={styles.who__is}>
             <button aria-label="Кто" className={styles.who__btn}>
               Диас
@@ -55,7 +63,9 @@ const Oppv = () => {
             <OrangeArrowRight />
           </button>
           <Image
-            className={styles.img}
+            className={
+              isSlidingOut ? `${styles.img} ${styles.slideOut}` : styles.img
+            }
             width={840}
             height={805}
             src="/Dias.png"
