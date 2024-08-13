@@ -33,6 +33,7 @@
       width: 200%;
       height: 200%;
       top: 117%;
+      z-index: -1;
       left: 50%;
       transform: translate(-50%, -100%);
     }
@@ -43,6 +44,7 @@
       width: 0;
       height: 0;
       top: 100%;
+      z-index: -1;
       left: 50%;
       transform: translate(-50%, -50%);
       transition: all 0.5s ease-out;
