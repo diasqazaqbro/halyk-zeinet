@@ -160,7 +160,7 @@
 .img2 {
   max-width: 130%;
   top: 0%;
-  left: 0%;
+  left: -5%;
 }
 
 .img.slide-out {
@@ -203,7 +203,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-490%);
+    transform: translateX(-540%);
   }
 }
 @keyframes moveLeftCoin2 {
@@ -211,7 +211,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-175%);
+    transform: translateX(-195%);
   }
 }
 @keyframes moveLeftWhiteCircle {
@@ -219,7 +219,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-70%);
+    transform: translateX(-83%);
   }
 }
 @keyframes slideInFromLeft {
@@ -303,6 +303,7 @@
 }
 
 .slideOut {
+  max-width: 150%;
   animation: slideLeftAndDisappear 1s forwards;
 }
 
@@ -348,9 +349,51 @@
   }
 }
 
+.detailed {
+  &__text {
+    font-size: 43px;
+    line-height: normal;
+    font-weight: 700;
+  }
+
+  &__text2 {
+    font-size: 86px;
+    line-height: normal;
+    width: 120%;
+    font-weight: 700;
+  }
+
+  &__desc {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: normal;
+  }
+}
+
 @media (max-width: 1230px) {
   .img2 {
     max-width: 600px;
+  }
+
+  .detailed {
+    &__text {
+      font-size: 32px;
+      line-height: normal;
+      font-weight: 700;
+    }
+
+    &__text2 {
+      font-size: 56px;
+      line-height: normal;
+      width: 120%;
+      font-weight: 700;
+    }
+
+    &__desc {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: normal;
+    }
   }
 }
 

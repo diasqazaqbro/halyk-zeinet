@@ -141,7 +141,7 @@ const Oppv = () => {
           <button className={styles.btn__mob} aria-label="Подробнее">
             <OrangeArrowRight />
           </button>
-          <div className="flex absolute left-[70%] top-[-6%] w-[120%] flex-col gap-10">
+          <div className="flex absolute left-[67%] top-[1%] w-[120%] flex-col gap-10">
             {visibleTexts.map(({ title, desc }, index) => (
               <div
                 key={index}
@@ -149,14 +149,15 @@ const Oppv = () => {
               >
                 <h1
                   className={cn({
-                    "text-[43px] leading-[normal] font-bold": index !== 0,
-                    "text-[86px] leading-[normal] w-[120%] font-bold":
-                      index === 0,
+                    [styles.detailed__text]: index !== 0,
+                    [styles.detailed__text2]: index === 0,
                   })}
                 >
                   {title}
                 </h1>
-                <Heading component="p">{desc}</Heading>
+                <Heading component="p" className={styles.detailed__desc}>
+                  {desc}
+                </Heading>
               </div>
             ))}
             <button
