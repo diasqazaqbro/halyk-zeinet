@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { NextUIProvider } from "@nextui-org/react";
 import "./styles/globals.scss";
 import { Header } from "@/widgets/Header";
 import { Footer } from "@/widgets/Footer";
@@ -22,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={SfPro.className}>
-        <Header />
-        {children}
-        <Footer />
+        <NextUIProvider>
+          <Header />
+          {children}
+          <Footer />
+        </NextUIProvider>
       </body>
     </html>
   );

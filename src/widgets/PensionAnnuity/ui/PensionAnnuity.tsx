@@ -1,11 +1,20 @@
+"use client";
 import React from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 import Heading from "@/shared/ui/Typography/Heading/Heading";
 import Button, { ButtonSize } from "@/shared/ui/Button/Button";
 import Image from "next/image";
+import ModalComponent from "@/shared/ui/Modal/Modal";
+import Input from "@/shared/ui/Input/Input";
 
 const PensionAnnuity = () => {
+  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <section className={cn(styles.pension)}>
       <div className={cn("container", styles.pension__inner)}>
@@ -16,7 +25,11 @@ const PensionAnnuity = () => {
           <Heading component="h2" className={styles.pension__subtitle}>
             Ваш надёжный финансовый партнёр
           </Heading>
-          <Button className={styles.button} size={ButtonSize.L}>
+          <Button
+            onClick={handleOpenModal}
+            className={styles.button}
+            size={ButtonSize.L}
+          >
             Оставить заявку
           </Button>
         </div>
@@ -30,6 +43,33 @@ const PensionAnnuity = () => {
           />
         </div>
       </div>
+      <ModalComponent
+        className="p-8"
+        isOpen={isModalOpen}
+      
+        onClose={() => setIsModalOpen(false)}
+      >
+        <div className="flex flex-col gap-8">
+          <h1 className={styles.modal__title}>Оставьте заявку</h1>
+          <Input
+            placeholder="Имя"
+            classField={styles.modal__input}
+            className={styles.modal__inputinside}
+          />
+          <Input
+            placeholder="Телефон"
+            classField={styles.modal__input}
+            className={styles.modal__inputinside}
+          />
+          <Input
+            placeholder="Возраст"
+            classField={styles.modal__input}
+            className={styles.modal__inputinside}
+          />
+          <p className={styles.modal__text2}>Ваши данный будут использованы для связи с Вами и не будут переданы третьим лицам.
+          При заполнении формы вы даете свое согласие на обработку персональных данных и маркетинговых активностей.</p>
+        </div>
+      </ModalComponent>
     </section>
   );
 };
