@@ -35,7 +35,6 @@ const ModalComponent: FC<ModalI> = ({
   ...props
 }) => {
   const { onOpenChange } = useDisclosure();
-  // backdrop: "bg-[#292f46]/50 backdrop-opacity-40"
   return (
     <Modal
       backdrop="opaque"
@@ -50,6 +49,9 @@ const ModalComponent: FC<ModalI> = ({
       onOpenChange={onOpenChange}
       isOpen={isOpen}
       onClose={onClose}
+      classNames={{
+        backdrop: "bg-[#00846E]/50 backdrop-opacity-30",
+      }}
       className={cn(
         className,
         size && styles[size],
