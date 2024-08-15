@@ -35,13 +35,14 @@ const ModalComponent: FC<ModalI> = ({
   ...props
 }) => {
   const { onOpenChange } = useDisclosure();
-
+  // backdrop: "bg-[#292f46]/50 backdrop-opacity-40"
   return (
     <Modal
-      backdrop="blur"
+      backdrop="opaque"
       placement="center"
       style={{
         maxWidth: "50.25rem",
+        borderRadius: "12px",
         background: "#fff",
         position: "relative",
         zIndex: 100,
