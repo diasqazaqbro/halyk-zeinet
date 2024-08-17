@@ -493,6 +493,7 @@
 
 .btn__dias {
   cursor: default;
+  font-size: 21px;
   display: none;
 }
 
@@ -578,7 +579,7 @@
 
 .oppv__mobtext {
   display: none;
-  font-size: 14px;
+  font-size: 18px;
   line-height: normal;
 }
 
@@ -609,6 +610,37 @@
       top: 12.5rem;
       position: absolute;
       left: 42%;
+    }
+  }
+
+  .mobcoin {
+    &_1 {
+      &.animate {
+        animation: moveRightMob 1s forwards;
+      }
+    }
+    &_2 {
+      &.animate {
+        animation: moveLeftMob 1s forwards;
+      }
+    }
+  }
+
+  @keyframes moveRightMob {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+
+  @keyframes moveLeftMob {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-260%);
     }
   }
 
@@ -654,56 +686,56 @@
   }
   .detailed {
     &__text {
-      font-size: 20px;
+      font-size: 26px;
       line-height: normal;
     }
     &__desc {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       line-height: normal;
     }
   }
-  .img {
-    width: 100%;
-    position: relative;
-    top: 3rem;
+}
+.img {
+  width: 100%;
+  position: relative;
+  top: 3rem;
+}
+
+.mobcoin {
+  &_1 {
+    background-image: url("./assets/MobCoin1.png");
+    width: 253px;
+    height: 256px;
+    display: block;
+    position: absolute;
+    top: 33%;
+    left: -16%;
+    z-index: 2;
+    transform: translate(1%, 3%);
   }
 
-  .mobcoin {
-    &_1 {
-      background-image: url("./assets/MobCoin1.png");
-      width: 253px;
-      height: 256px;
-      display: block;
-      position: absolute;
-      top: 33%;
-      left: -16%;
-      z-index: 2;
-      transform: translate(1%, 3%);
-    }
-
-    &_2 {
-      background-image: url("./assets/MobCoin2.png");
-      display: block;
-      width: 183px;
-      height: 186px;
-      position: absolute;
-      top: 44%;
-      left: 70%;
-      z-index: 2;
-    }
+  &_2 {
+    background-image: url("./assets/MobCoin2.png");
+    display: block;
+    width: 183px;
+    height: 186px;
+    position: absolute;
+    top: 44%;
+    left: 70%;
+    z-index: 2;
   }
+}
 
-  .coin {
-    &_1 {
-      display: none;
-    }
-    &_2 {
-      display: none;
-    }
-    &_3 {
-      display: none;
-    }
+.coin {
+  &_1 {
+    display: none;
+  }
+  &_2 {
+    display: none;
+  }
+  &_3 {
+    display: none;
   }
 }
 
@@ -717,6 +749,37 @@
       left: 42%;
     }
   }
+
+  .mobcoin {
+    &_1 {
+      &.animate {
+        animation: moveRightMob 1s forwards;
+      }
+    }
+    &_2 {
+      &.animate {
+        animation: moveLeftMob 1s forwards;
+      }
+    }
+  }
+
+  @keyframes moveRightMob {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(180%);
+    }
+  }
+
+  @keyframes moveLeftMob {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-220%);
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -724,6 +787,7 @@
     &__mobtext {
       display: block;
       width: 31%;
+      font-size: 14px;
       position: absolute;
       top: 16.5rem;
       left: 35%;
@@ -751,8 +815,18 @@
     }
   }
 
+  .detailed {
+    &__text {
+      font-size: 20px;
+    }
+    &__desc {
+      font-size: 14px;
+    }
+  }
+
   .btn__dias {
     top: 2.2rem;
+    font-size: 18px;
     &:after {
       content: "";
       background-image: url("./assets/Vector3.png");
