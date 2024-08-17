@@ -133,7 +133,7 @@ const Oppv = () => {
             [styles.moveFadedCoin2]: isCoinsFaded,
           })}
         />
-        <div className="flex flex-col absolute gap-[5px]">
+        <div className="hidden mmd:flex flex-col absolute gap-[5px]">
           {visibleTextsMob.map(({ title, desc }, index) => (
             <div
               key={index}

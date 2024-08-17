@@ -583,7 +583,21 @@
   line-height: normal;
 }
 
+.slideLeftMob {
+  display: none;
+}
+
+.img2__mob {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .img2__mob {
+    display: block;
+  }
+  .slideLeftMob {
+    display: block;
+  }
   .oppv {
     padding-top: 25px;
     &__right {
@@ -695,47 +709,46 @@
       line-height: normal;
     }
   }
-}
-.img {
-  width: 100%;
-  position: relative;
-  top: 3rem;
-}
-
-.mobcoin {
-  &_1 {
-    background-image: url("./assets/MobCoin1.png");
-    width: 253px;
-    height: 256px;
-    display: block;
-    position: absolute;
-    top: 33%;
-    left: -16%;
-    z-index: 2;
-    transform: translate(1%, 3%);
+  .img {
+    width: 100%;
+    position: relative;
+    top: 3.5rem;
   }
 
-  &_2 {
-    background-image: url("./assets/MobCoin2.png");
-    display: block;
-    width: 183px;
-    height: 186px;
-    position: absolute;
-    top: 44%;
-    left: 70%;
-    z-index: 2;
-  }
-}
+  .mobcoin {
+    &_1 {
+      background-image: url("./assets/MobCoin1.png");
+      width: 253px;
+      height: 256px;
+      display: block;
+      position: absolute;
+      top: 33%;
+      left: -16%;
+      z-index: 2;
+      transform: translate(1%, 3%);
+    }
 
-.coin {
-  &_1 {
-    display: none;
+    &_2 {
+      background-image: url("./assets/MobCoin2.png");
+      display: block;
+      width: 183px;
+      height: 186px;
+      position: absolute;
+      top: 44%;
+      left: 70%;
+      z-index: 2;
+    }
   }
-  &_2 {
-    display: none;
-  }
-  &_3 {
-    display: none;
+  .coin {
+    &_1 {
+      display: none;
+    }
+    &_2 {
+      display: none;
+    }
+    &_3 {
+      display: none;
+    }
   }
 }
 
