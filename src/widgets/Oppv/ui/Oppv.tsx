@@ -17,16 +17,18 @@ const Oppv = () => {
   const [isCoinsFaded, setIsCoinsFaded] = React.useState<boolean>(false);
   const [isDias2Visible, setIsDias2Visible] = React.useState<boolean>(false);
   const [visibleTexts, setVisibleTexts] = React.useState([]);
-  const [hasStarted, setHasStarted] = React.useState<boolean>(false);
   const [fadeOutComplete, setFadeOutComplete] = React.useState<boolean>(false);
   const [showAll, setShowAll] = React.useState<boolean>(false);
-  const [isAnimating, setIsAnimating] = React.useState<boolean>(false);
+  const [hideAllMob, setHideAllMob] = React.useState<boolean>(false);
+  const [slideLeftMob, setSlideLeftMob] = React.useState<boolean>(false);
+  const [visibleTextsMob, setVisibleTextsMob] = React.useState([]);
+  const [fadeOutCompleteMob, setFadeOutCompleteMob] =
+    React.useState<boolean>(false);
+  const [isImageSlidingOutMob, setIsImageSlidingOutMob] =
+    React.useState<boolean>(false);
+  const [animateCoins, setAnimateCoins] = React.useState<boolean>(false);
 
   const handleClick = () => {
-    // if (isAnimating) return;
-
-    // setIsAnimating(true);
-
     setIsSlidingOut(true);
     setIsTextFaded(true);
     setIsCoinsMoved(true);
@@ -51,13 +53,11 @@ const Oppv = () => {
 
       setTimeout(() => {
         setFadeOutComplete(true);
-        setIsAnimating(false);
       }, 1000);
     } else {
       setTimeout(() => {
         setFadeOutComplete(false);
         setVisibleTexts([]);
-        setIsAnimating(false);
       }, 1000);
     }
   };
@@ -72,6 +72,35 @@ const Oppv = () => {
     setIsTextFaded(false);
     setIsCoinsMoved(false);
     setIsDias2Visible(false);
+  };
+
+  const handleClickMob = () => {
+    setHideAllMob(true);
+    setSlideLeftMob(true);
+    setIsImageSlidingOutMob(true);
+    setAnimateCoins(true);
+
+    if (!isSlidingOut) {
+      OppvData2.forEach((data: any, index) => {
+        setTimeout(() => {
+          setVisibleTextsMob((prev: any) => {
+            if (!prev.includes(data)) {
+              return [...prev, data];
+            }
+            return prev;
+          });
+        }, index * 1000);
+      });
+
+      setTimeout(() => {
+        setFadeOutCompleteMob(true);
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        setFadeOutCompleteMob(false);
+        setVisibleTextsMob([]);
+      }, 1000);
+    }
   };
 
   return (
@@ -104,6 +133,19 @@ const Oppv = () => {
             [styles.moveFadedCoin2]: isCoinsFaded,
           })}
         />
+        <div className="flex flex-col absolute gap-[5px]">
+          {visibleTextsMob.map(({ title, desc }, index) => (
+            <div
+              key={index}
+              className={cn("flex flex-col gap-[5px]", styles.showTextMob)}
+            >
+              <h1 className={styles.detailed__text}>{title}</h1>
+              <Heading component="p" className={styles.detailed__desc}>
+                {desc}
+              </Heading>
+            </div>
+          ))}
+        </div>
         <div className="flex flex-col justify-between">
           <div className="flex flex-col gap-5">
             <Heading
@@ -111,7 +153,8 @@ const Oppv = () => {
               className={cn(
                 `mmd:w-[80%]`,
                 showAll ? styles.showAll : "",
-                isTextFaded ? styles.fadeOut : ""
+                isTextFaded ? styles.fadeOut : "",
+                hideAllMob ? styles.hideAllMob : ""
               )}
             >
               А кто такие ОПВ и ОППВ?
@@ -120,7 +163,8 @@ const Oppv = () => {
               className={cn(
                 "list-disc flex flex-col gap-5 pl-6",
                 showAll ? styles.showAll : "",
-                isTextFaded ? styles.fadeOut : ""
+                isTextFaded ? styles.fadeOut : "",
+                hideAllMob ? styles.hideAllMob : ""
               )}
             >
               {OppvData.map(({ text }, index) => (
@@ -130,9 +174,10 @@ const Oppv = () => {
               ))}
             </ul>
             <p
-              className={cn(styles.oppv__mobtext, {
-                [styles.fadeOut]: isTextFaded,
-              })}
+              className={cn(
+                styles.oppv__mobtext,
+                hideAllMob ? styles.hideAllMob : ""
+              )}
             >
               И сейчас он вам расскажет
             </p>
@@ -161,10 +206,11 @@ const Oppv = () => {
               <GreenArrowRight />
             </button>
             <p
-              className={`${styles.oppv__text} ${
-                (isTextFaded ? styles.fadeOut : "",
-                showAll ? styles.showAll : "")
-              }`}
+              className={cn(
+                styles.oppv__text,
+                isTextFaded ? styles.fadeOut : "",
+                showAll ? styles.showAll : ""
+              )}
             >
               И сейчас он вам расскажет
             </p>
@@ -182,9 +228,20 @@ const Oppv = () => {
               [styles.moveFadedCoin2]: isCoinsFaded,
             })}
           />
-          <div className={styles.mobcoin_1} />
-          <div className={styles.mobcoin_2} />
-          <button className={styles.btn__dias}>Диас</button>
+          <div
+            className={cn(styles.mobcoin_1, { [styles.animate]: animateCoins })}
+          />
+          <div
+            className={cn(styles.mobcoin_2, { [styles.animate]: animateCoins })}
+          />
+          <button
+            className={cn(
+              styles.btn__dias,
+              hideAllMob ? styles.hideAllMob : ""
+            )}
+          >
+            Диас
+          </button>
           <div
             className={cn(
               styles.who__is,
@@ -196,7 +253,11 @@ const Oppv = () => {
               Диас
             </button>
           </div>
-          <button className={styles.btn__mob} aria-label="Подробнее">
+          <button
+            className={cn(styles.btn__mob, hideAllMob ? styles.hideAllMob : "")}
+            onClick={handleClickMob}
+            aria-label="Подробнее"
+          >
             <OrangeArrowRight />
           </button>
           <div className="flex absolute left-[67%] top-[1%] w-[120%] flex-col gap-10">
@@ -239,12 +300,23 @@ const Oppv = () => {
             className={cn(
               isSlidingOut ? `${styles.img} ${styles.slideOut}` : styles.img,
               isSlidingIn ? styles.slideIn : styles.img,
+              slideLeftMob ? styles.slideLeftMob : styles.img,
               { [styles.dnone]: fadeOutComplete }
             )}
             width={840}
             height={805}
             src="/Dias.png"
             alt="Диасик"
+          />
+          <Image
+            className={cn(
+              styles.img2__mob,
+              isImageSlidingOutMob ? styles.slideOutMob : ""
+            )}
+            src={"/Dias2.png"}
+            width={828}
+            height={787}
+            alt="Диас2"
           />
         </div>
       </div>
