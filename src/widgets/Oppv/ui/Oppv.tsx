@@ -9,32 +9,69 @@ import GreenArrowRight from "@/shared/ui/Icon/Arrow/GreenArrowRight";
 import OrangeArrowRight from "@/shared/ui/Icon/Arrow/OrangeArrowRight";
 
 const Oppv = () => {
-  const [isSlidingOut, setIsSlidingOut] = React.useState(false);
-  const [isTextFaded, setIsTextFaded] = React.useState(false);
-  const [isCoinsMoved, setIsCoinsMoved] = React.useState(false);
-  const [isDias2Visible, setIsDias2Visible] = React.useState(false);
+  const [isSlidingOut, setIsSlidingOut] = React.useState<boolean>(false);
+  const [isSlidingIn, setIsSlidingIn] = React.useState<boolean>(false);
+  const [isTextFaded, setIsTextFaded] = React.useState<boolean>(false);
+  const [isReverseFaded, setIsReverseFaded] = React.useState<boolean>(false);
+  const [isCoinsMoved, setIsCoinsMoved] = React.useState<boolean>(false);
+  const [isCoinsFaded, setIsCoinsFaded] = React.useState<boolean>(false);
+  const [isDias2Visible, setIsDias2Visible] = React.useState<boolean>(false);
   const [visibleTexts, setVisibleTexts] = React.useState([]);
-  const [hasStarted, setHasStarted] = React.useState(false);
-  const [fadeOutComplete, setFadeOutComplete] = React.useState(false);
+  const [hasStarted, setHasStarted] = React.useState<boolean>(false);
+  const [fadeOutComplete, setFadeOutComplete] = React.useState<boolean>(false);
+  const [showAll, setShowAll] = React.useState<boolean>(false);
+  const [isAnimating, setIsAnimating] = React.useState<boolean>(false);
 
   const handleClick = () => {
-    if (!hasStarted) {
-      setIsSlidingOut(true);
-      setIsTextFaded(true);
-      setIsCoinsMoved(true);
-      setIsDias2Visible(true);
-      setHasStarted(true);
+    // if (isAnimating) return;
 
+    // setIsAnimating(true);
+
+    setIsSlidingOut(true);
+    setIsTextFaded(true);
+    setIsCoinsMoved(true);
+    setIsDias2Visible(true);
+
+    setIsReverseFaded(false);
+    setIsCoinsFaded(false);
+    setIsSlidingIn(false);
+    setShowAll(false);
+
+    if (!isSlidingOut) {
       OppvData2.forEach((data: any, index) => {
         setTimeout(() => {
-          setVisibleTexts((prev): any => [...prev, data]);
-        }, index * 500);
+          setVisibleTexts((prev: any) => {
+            if (!prev.includes(data)) {
+              return [...prev, data];
+            }
+            return prev;
+          });
+        }, index * 1000);
       });
 
       setTimeout(() => {
         setFadeOutComplete(true);
+        setIsAnimating(false);
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        setFadeOutComplete(false);
+        setVisibleTexts([]);
+        setIsAnimating(false);
       }, 1000);
     }
+  };
+
+  const handleReverseClick = () => {
+    setIsReverseFaded(true);
+    setIsCoinsFaded(true);
+    setIsSlidingIn(true);
+    setShowAll(true);
+
+    setIsSlidingOut(false);
+    setIsTextFaded(false);
+    setIsCoinsMoved(false);
+    setIsDias2Visible(false);
   };
 
   return (
@@ -47,7 +84,8 @@ const Oppv = () => {
               [styles.show]: isDias2Visible,
               [styles.hide]: !isDias2Visible,
             },
-            styles.img2
+            styles.img2,
+            isReverseFaded ? styles.fadeOut2 : ""
           )}
           src={"/Dias2.png"}
           width={828}
@@ -55,27 +93,35 @@ const Oppv = () => {
           alt="Диас2"
         />
         <div
-          className={cn(styles.coin_1, { [styles.moveLeft]: isCoinsMoved })}
+          className={cn(styles.coin_1, {
+            [styles.moveLeft]: isCoinsMoved,
+            [styles.moveFadedCoin2]: isCoinsFaded,
+          })}
         />
         <div
           className={cn(styles.coin_2, {
             [styles.moveLeftCoin2]: isCoinsMoved,
+            [styles.moveFadedCoin2]: isCoinsFaded,
           })}
         />
         <div className="flex flex-col justify-between">
           <div className="flex flex-col gap-5">
             <Heading
               component="h1"
-              className={cn(`mmd:w-[80%]`, {
-                [styles.fadeOut]: isTextFaded,
-              })}
+              className={cn(
+                `mmd:w-[80%]`,
+                showAll ? styles.showAll : "",
+                isTextFaded ? styles.fadeOut : ""
+              )}
             >
               А кто такие ОПВ и ОППВ?
             </Heading>
             <ul
-              className={cn("list-disc flex flex-col gap-5 pl-6", {
-                [styles.fadeOut]: isTextFaded,
-              })}
+              className={cn(
+                "list-disc flex flex-col gap-5 pl-6",
+                showAll ? styles.showAll : "",
+                isTextFaded ? styles.fadeOut : ""
+              )}
             >
               {OppvData.map(({ text }, index) => (
                 <li key={index}>
@@ -95,7 +141,8 @@ const Oppv = () => {
             <div
               className={cn(
                 "absolute top-[-114%] left-[29%]",
-                isTextFaded ? styles.fadeOut : ""
+                isTextFaded ? styles.fadeOut : "",
+                showAll ? styles.showAll : ""
               )}
             >
               <button aria-label="Нажми сюда" className={styles.btn__help}>
@@ -103,7 +150,11 @@ const Oppv = () => {
               </button>
             </div>
             <button
-              className={cn(styles.btn, isTextFaded ? styles.fadeOut : "")}
+              className={cn(
+                styles.btn,
+                isTextFaded ? styles.fadeOut : "",
+                showAll ? styles.showAll : ""
+              )}
               onClick={handleClick}
               aria-label="Подробнее"
             >
@@ -111,7 +162,8 @@ const Oppv = () => {
             </button>
             <p
               className={`${styles.oppv__text} ${
-                isTextFaded ? styles.fadeOut : ""
+                (isTextFaded ? styles.fadeOut : "",
+                showAll ? styles.showAll : "")
               }`}
             >
               И сейчас он вам расскажет
@@ -121,18 +173,24 @@ const Oppv = () => {
         <div
           className={cn(styles.oppv__right, {
             [styles.moveLeftWhiteCircle]: isCoinsMoved,
+            [styles.moveFadedWhiteCircle]: isCoinsFaded,
           })}
         >
           <div
             className={cn(styles.coin_3, {
               [styles.moveLeftCoin3]: isCoinsMoved,
+              [styles.moveFadedCoin2]: isCoinsFaded,
             })}
           />
           <div className={styles.mobcoin_1} />
           <div className={styles.mobcoin_2} />
           <button className={styles.btn__dias}>Диас</button>
           <div
-            className={cn(styles.who__is, isTextFaded ? styles.fadeOut : "")}
+            className={cn(
+              styles.who__is,
+              isTextFaded ? styles.fadeOut : "",
+              showAll ? styles.showAll : ""
+            )}
           >
             <button aria-label="Кто" className={styles.who__btn}>
               Диас
@@ -145,7 +203,11 @@ const Oppv = () => {
             {visibleTexts.map(({ title, desc }, index) => (
               <div
                 key={index}
-                className={cn("flex flex-col gap-2.5", styles.showText)}
+                className={cn(
+                  "flex flex-col gap-2.5",
+                  styles.showText,
+                  isReverseFaded ? styles.fadeOut2 : ""
+                )}
               >
                 <h1
                   className={cn({
@@ -163,8 +225,10 @@ const Oppv = () => {
             <button
               className={cn(
                 styles.btn2,
+                isReverseFaded ? styles.fadeOut2 : "",
                 isTextFaded ? styles.fadeIn2 : "hidden"
               )}
+              onClick={handleReverseClick}
               aria-label="Свайп обратно"
             >
               <GreenArrowRight />
@@ -174,6 +238,7 @@ const Oppv = () => {
           <Image
             className={cn(
               isSlidingOut ? `${styles.img} ${styles.slideOut}` : styles.img,
+              isSlidingIn ? styles.slideIn : styles.img,
               { [styles.dnone]: fadeOutComplete }
             )}
             width={840}

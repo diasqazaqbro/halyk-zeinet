@@ -23,6 +23,10 @@
     &.moveLeftWhiteCircle::after {
       transform: translateX(-100%);
     }
+
+    &.moveFadedWhiteCircle::after {
+      transform: translateX(0%);
+    }
   }
 
   &__text {
@@ -178,6 +182,16 @@
     opacity: 0;
   }
 }
+@keyframes slideRightAndDisappear {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -186,6 +200,26 @@
   100% {
     opacity: 0;
     visibility: hidden;
+  }
+}
+@keyframes fadeOut2 {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes showAll {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
   }
 }
 @keyframes fadeIn2 {
@@ -214,12 +248,30 @@
     transform: translateX(-195%);
   }
 }
+@keyframes moveFadedCoin2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
 @keyframes moveLeftWhiteCircle {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-83%);
+  }
+}
+@keyframes moveFadedWhiteCircle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
   }
 }
 @keyframes slideInFromLeft {
@@ -273,6 +325,12 @@
 .moveLeftWhiteCircle {
   animation: moveLeftWhiteCircle 1s forwards;
 }
+.moveFadedWhiteCircle {
+  animation: moveFadedWhiteCircle 2s forwards;
+}
+.moveFadedCoin2 {
+  animation: moveFadedCoin2 1s forwards;
+}
 .moveLeftCoin2 {
   animation: moveLeftCoin2 1s forwards;
 }
@@ -286,6 +344,12 @@
 
 .fadeOut {
   animation: fadeOut 1s forwards;
+}
+.showAll {
+  animation: showAll 1s forwards;
+}
+.fadeOut2 {
+  animation: fadeOut2 0.5s forwards;
   pointer-events: none;
 }
 
@@ -305,6 +369,10 @@
 .slideOut {
   max-width: 150%;
   animation: slideLeftAndDisappear 1s forwards;
+}
+.slideIn {
+  max-width: 130%;
+  animation: slideRightAndDisappear 1s forwards;
 }
 
 .btn__help {
