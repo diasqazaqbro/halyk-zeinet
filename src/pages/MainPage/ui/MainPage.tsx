@@ -8,7 +8,7 @@ import { Security } from "@/widgets/Security";
 // 
 export default function MainPage() {
   return (
-    <>
+    <div className="wrapper">
       <PensionAnnuity />
       <Annuity/>
 
@@ -19,6 +19,6 @@ export default function MainPage() {
       <Security/>
 
       <Faq />
-    </>
+    </div>
   );
 }

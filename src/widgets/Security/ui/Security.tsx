@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Security() {
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
       <div className="container">
         <Heading component="h1">
           Гарантии
@@ -63,6 +63,6 @@ export default function Security() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
