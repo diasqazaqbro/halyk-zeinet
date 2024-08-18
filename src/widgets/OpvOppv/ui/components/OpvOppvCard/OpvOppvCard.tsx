@@ -6,16 +6,19 @@ import Image from "next/image";
 interface ICard  {
   title: string
   img: any
+  handleClick: any
 }
 
-const OpvOppvCard: FC<ICard>  = ({title, img}) => {
+const OpvOppvCard: FC<ICard>  = ({title, img, handleClick}) => {
   return (
-    <div className={styles.root}>
+    <div className={styles.root} onClick={() => handleClick(title)}>
       <Heading className={styles.title} component="h2">
         {title}
       </Heading>
-
-      <Image className={styles.img} src={img} alt="Dias" />
+      <div className={styles.imgContainer}>
+        <div className={styles.circle}></div>
+        <Image className={styles.img} src={img} alt="Dias" />
+      </div>
     </div>
   );
 };
