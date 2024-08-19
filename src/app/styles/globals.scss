@@ -13,13 +13,13 @@ html {
 }
 body {
   color: #fff;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #fff;
   position: relative;
   color: var(--white);
 }
 #root {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .container {
@@ -47,14 +47,21 @@ body {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
-}
 
-section {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  scroll-snap-align: center;
-}
+  section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 
+  @media (max-width: 768px) {
+    section {
+      // min-height: auto;
+      padding: 0px;
+    }
+  }
+}

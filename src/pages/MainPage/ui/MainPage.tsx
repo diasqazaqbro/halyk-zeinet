@@ -5,20 +5,20 @@ import { Oppv } from "@/widgets/Oppv";
 import { OpvOppv } from "@/widgets/OpvOppv";
 import { PensionAnnuity } from "@/widgets/PensionAnnuity";
 import { Security } from "@/widgets/Security";
-// 
+//
 export default function MainPage() {
   return (
-    <div className="wrapper">
+    <>
       <PensionAnnuity />
-      <Annuity/>
+      <Annuity />
 
       <Oppv />
-      <OpvOppv/>
+      <OpvOppv />
 
       <Benefits />
-      <Security/>
+      <Security />
 
       <Faq />
-    </div>
+    </>
   );
 }
