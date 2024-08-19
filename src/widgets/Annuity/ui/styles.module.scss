@@ -120,6 +120,8 @@
       position: absolute;
       left: 50%;
       bottom: 40px;
+      width: 80px;
+      height: 80px;
       transform: translateX(-50%);
       z-index: 200;
     }
@@ -207,7 +209,6 @@
     .textStage3 {
       margin-top: 130px;
     }
-  
 
     .textStage1,
     .textStage2,
@@ -238,14 +239,14 @@
     }
 
     .appearFromRight {
-      position: absolute; 
+      position: absolute;
       bottom: 0;
       opacity: 0;
       transition: right 1s ease-in-out, opacity 1s ease-in-out;
     }
 
     .appearFromRight.moveIn {
-      right: 20px; 
+      right: 20px;
       bottom: -20px;
       opacity: 1;
     }
@@ -412,6 +413,8 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 23;
 }
 
 .button__circle svg path {
