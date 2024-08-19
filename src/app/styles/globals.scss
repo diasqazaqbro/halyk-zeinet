@@ -54,7 +54,6 @@ body {
     align-items: center;
     justify-content: center;
     scroll-snap-align: center;
-    padding: 20px;
     box-sizing: border-box;
   }
 
@@ -64,4 +63,15 @@ body {
       padding: 0px;
     }
   }
+}
+
+footer {
+  scroll-snap-align: end;
+  // scroll-snap-align: none;
+
+  // position: fixed;
+  width: 100%;
+  z-index: 10;
+  height: auto;
+  display: block;
 }
