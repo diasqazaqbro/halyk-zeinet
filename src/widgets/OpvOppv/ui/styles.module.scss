@@ -1,6 +1,4 @@
 .root {
-  padding-top: 50px;
-  padding-bottom: 126px;
   background-image: linear-gradient(
       rgba(0, 132, 110, 0.8),
       rgba(0, 132, 110, 0.8)
@@ -13,6 +11,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  padding-top: 50px;
 
   @media (max-width: 480px) {
     .root {
@@ -94,7 +93,7 @@
 .flex {
   display: flex;
   margin-top: 40px;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .subtitle {

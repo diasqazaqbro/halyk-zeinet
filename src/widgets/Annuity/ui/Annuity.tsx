@@ -131,14 +131,14 @@ export default function Annuity() {
             src={MainImage2}
             alt="annuity"
           />
-          <div
+          {/* <div
             className={cn(styles.arrowContainer__1, {
               [styles.fadeOut]: startAnimation,
             })}
           >
             <Image className={styles.arrow__1} src={Arrow2} alt="tg" />
             <div className={styles.button__1}>Аида</div>
-          </div>
+          </div> */}
           <div
             className={cn(styles.texts, {
               [styles.fadeOut]: startAnimation || startAnimationMobile,
