@@ -12,6 +12,7 @@ const Faq = () => {
 
   return (
     <section
+      id="faq"
       style={{
         alignItems: "flex-start",
       }}

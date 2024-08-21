@@ -1,5 +1,6 @@
 import Heading from "@/shared/ui/Typography/Heading/Heading";
 import styles from "./styles.module.scss";
+import cn from "classnames";
 import image from "./assets/tg.png";
 import Image from "next/image";
 
@@ -20,7 +21,9 @@ export default function Security() {
                   Lorem ipsum dolor sit amet consectetur. Nulla nunc congue
                   viverra in. Scelerisque morbi facilisis ullamcorper sed ac
                   mauris risus. Ac tempus fermentum laoreet diam. Vitae amet
-                  mauris ac nec viverra nibh porta. mauris ac nec viverra nibh porta. mauris ac nec viverra nibh porta. mauris ac nec viverra nibh porta.
+                  mauris ac nec viverra nibh porta. mauris ac nec viverra nibh
+                  porta. mauris ac nec viverra nibh porta. mauris ac nec viverra
+                  nibh porta.
                 </Heading>
               </div>
             </div>
@@ -31,13 +34,15 @@ export default function Security() {
                   Lorem ipsum dolor sit amet consectetur. Nulla nunc congue
                   viverra in. Scelerisque morbi facilisis ullamcorper sed ac
                   mauris risus. Ac tempus fermentum laoreet diam. Vitae amet
-                  mauris ac nec viverra nibh porta. mauris ac nec viverra nibh porta. mauris ac nec viverra nibh porta. mauris ac nec viverra nibh porta.
+                  mauris ac nec viverra nibh porta. mauris ac nec viverra nibh
+                  porta. mauris ac nec viverra nibh porta. mauris ac nec viverra
+                  nibh porta.
                 </Heading>
               </div>
             </div>
           </div>
           <div className="w-[24%] sm:w-full">
-            <div className={styles.item}>
+            <div className={cn(styles.item, "overflow-hidden")}>
               <div className={styles.item__text}>
                 <Heading component="h3">Сертификаты</Heading>
                 <Heading component="p">

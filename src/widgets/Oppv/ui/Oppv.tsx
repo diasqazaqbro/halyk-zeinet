@@ -104,7 +104,7 @@ const Oppv = () => {
   };
 
   return (
-    <section className={styles.oppv}>
+    <section id="oppv" className={styles.oppv}>
       <div className="container flex justify-between relative mmd:flex-col">
         <Image
           className={cn(

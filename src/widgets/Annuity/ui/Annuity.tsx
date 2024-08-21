@@ -72,7 +72,7 @@ export default function Annuity() {
   };
 
   return (
-    <section className={styles.root}>
+    <section id="annuity" className={styles.root}>
       <Image
         className={cn(styles.tg__3, { [styles.tg__3fadeOut]: startAnimation })}
         src={Tg2}

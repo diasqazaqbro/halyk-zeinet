@@ -10,12 +10,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className="container flex items-center justify-between">
         <Link href={"/"}>
-          <div className="hidden sm:block">
-            <LogoMob />
-          </div>
-          <div className="sm:hidden">
-            <LogoDesktop />
-          </div>
+          <LogoDesktop />
         </Link>
         <div className="flex items-center" style={{ gap: "2.25rem" }}>
           <Navbar />

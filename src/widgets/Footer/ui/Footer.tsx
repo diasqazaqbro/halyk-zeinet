@@ -6,11 +6,11 @@ import LogoFooterMob from "@/shared/ui/Icon/Logo/LogoFooterMob";
 export default function Footer() {
   const data = [
     { name: "Главная", link: "/" },
-    { name: "Аннуитет", link: "/" },
-    { name: "ОППВ", link: "/" },
-    { name: "Калькулятор", link: "/" },
-    { name: "FAQ", link: "/" },
-    { name: "Выгоды", link: "/" },
+    { name: "Аннуитет", link: "#annuity" },
+    { name: "ОППВ", link: "#oppv" },
+    { name: "Калькулятор", link: "#calculator" },
+    { name: "FAQ", link: "#faq" },
+    { name: "Выгоды", link: "#benefits" },
   ];
   return (
     <footer className={styles.footer}>

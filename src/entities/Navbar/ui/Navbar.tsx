@@ -5,10 +5,10 @@ import styles from "./styles.module.scss";
 export default function Navbar() {
   const navs = [
     { name: "Главная", link: "/" },
-    { name: "Аннуитет", link: "/" },
-    { name: "ОППВ", link: "/" },
-    { name: "Калькулятор", link: "/" },
-    { name: "FAQ", link: "/" },
+    { name: "Аннуитет", link: "#annuity" },
+    { name: "ОППВ", link: "#oppv" },
+    { name: "Калькулятор", link: "#calculator" },
+    { name: "FAQ", link: "#faq" },
   ];
 
   return (
