@@ -15,10 +15,10 @@ const OpvOppv = () => {
   const [state, setState] = useState(1);
   const [type, setType] = useState();
   const [sex, setSex] = useState();
-  const [agePart1, setAgePart1] = useState('0');
-  const [agePart2, setAgePart2] = useState('0');
+  const [agePart1, setAgePart1] = useState("0");
+  const [agePart2, setAgePart2] = useState("0");
 
-  const [answer, setAnswer] = useState(0)
+  const [answer, setAnswer] = useState(0);
   const handleClick = (type: any) => {
     if (state === 1) {
       setType(type);
@@ -40,7 +40,7 @@ const OpvOppv = () => {
 
   useEffect(() => {
     const ageCombined = parseInt(agePart1 + agePart2, 10) * 10;
-  
+
     setAnswer(ageCombined);
   }, [agePart1, agePart2]);
   const returnBody = () => {
@@ -68,7 +68,9 @@ const OpvOppv = () => {
       case 3:
         return (
           <div className={styles.inner}>
-            <Heading className="mb-12" component="h1">Введите ваш возраст</Heading>
+            <Heading className="mb-12" component="h1">
+              Введите ваш возраст
+            </Heading>
 
             <div className={styles.input__container}>
               <input
@@ -114,7 +116,7 @@ const OpvOppv = () => {
 
   return (
     <section
-    id="calculator"
+      id="calculator"
       className={cn(styles.root, {
         [styles.padding]: state === 2,
       })}
@@ -153,7 +155,7 @@ const OpvOppv = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       >
-        <div className="flex flex-col gap-8">
+        <form className="flex flex-col gap-8">
           <h1 className={styles.modal__title}>Оставьте заявку</h1>
           <Input
             placeholder="Имя"
@@ -175,7 +177,7 @@ const OpvOppv = () => {
             третьим лицам. При заполнении формы вы даете свое согласие на
             обработку персональных данных и маркетинговых активностей.
           </p>
-        </div>
+        </form>
       </ModalComponent>
     </section>
   );

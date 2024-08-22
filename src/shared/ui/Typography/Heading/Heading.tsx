@@ -3,9 +3,12 @@ import styles from "./styles.module.scss";
 import cn from "classnames";
 
 interface IHeadingProps {
-  children: React.ReactNode | string;
+  children?: React.ReactNode | string;
   className?: string;
   component: "h1" | "h2" | "h3" | "p";
+  dangerouslySetInnerHTML?: {
+    __html: string;
+  };
 }
 
 const componentMap = {
@@ -19,10 +22,16 @@ const Heading = ({
   component: Component,
   children,
   className,
+  dangerouslySetInnerHTML,
 }: IHeadingProps) => {
   const componentClassName = componentMap[Component];
 
-  return (
+  return dangerouslySetInnerHTML ? (
+    <Component
+      className={cn(componentClassName, className)}
+      dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+    />
+  ) : (
     <Component className={cn(componentClassName, className)}>
       {children}
     </Component>

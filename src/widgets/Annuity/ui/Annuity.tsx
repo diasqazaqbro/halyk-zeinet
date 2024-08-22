@@ -147,11 +147,9 @@ export default function Annuity() {
             <Heading component="h1">Что такое пенсионный аннуитет?</Heading>
             <h1 className={styles.title}></h1>
             <p className={styles.description}>
-              Аннуитет — это финансовый продукт, который обеспечивает вам
-              регулярные выплаты на протяжении всей жизни в обмен на один
-              крупный взнос или серию взносов. Это как договор, по которому вы
-              платите деньги заранее, а потом получаете деньги обратно
-              регулярно, как зарплату, на протяжении всей жизни.
+              Пенсионный аннуитет - это государственная программа, разработанная
+              Национальным Банком Республики Казахстан, позволяющая досрочно
+              использовать пенсионные накопления с 40 лет.
             </p>
 
             <div className={styles.button__container}>
@@ -186,33 +184,91 @@ export default function Annuity() {
         </div>
 
         {/* First Text Stage */}
-        <div
-          className={cn(styles.newTextContainer, styles.textStage1, {
-            [styles.fadeIn]: showTextStage1,
-          })}
-        >
-          <h1 className={styles.title}>История Аиды</h1>
-          <p className={styles.subtitle}>
-            Аиде 40 лет, она работает учителем в Алматы и планирует выйти на
-            пенсию через 13 лет
-          </p>
+        <div>
+          <div
+            className={cn(styles.newTextContainer, styles.textStage1, {
+              [styles.fadeIn]: showTextStage1,
+            })}
+          >
+            <h1 className={cn(styles.title, "whitespace-nowrap")}>
+              История Лауры
+            </h1>
+            <p className={styles.subtitle}>
+              Лауре 45 лет, она работает бухгалтером в Алматы и планирует{" "}
+              <strong>досрочно</strong> использовать свои пенсионные накопления.
+            </p>
+            <div
+              className={cn(styles.textStage2, {
+                [styles.fadeIn]: showTextStage2,
+              })}
+            >
+              <h2 className={styles.sectionTitle}>Что она делает:</h2>
+              <p className={styles.description2}>
+                Лаура решает заключить договор пенсионного аннуитета, так как у
+                неё имеются достаточные наколпения в ЕНПФ.
+              </p>
+            </div>
+            <div
+              className={cn(styles.textStage3, {
+                [styles.fadeIn]: showTextStage3,
+              })}
+            >
+              <h2 className={styles.sectionTitle}>Как это работает:</h2>
+              <ul className={styles.stepsList}>
+                <li>
+                  <strong>Взнос:</strong> Лаура делает один крупный взнос или
+                  несколько взносов в страховую компанию.
+                </li>
+                <li>
+                  <strong>Регулярные выплаты:</strong> Когда Лауре исполнится 55
+                  лет, она начнёт получать ежемесячные выплаты с ежегодной
+                  индексацией (увеличением) в размере 7%, согласно договору
+                  пенсионного аннуитета.
+                </li>
+                <li>
+                  <strong>Пожизненно:</strong> Эти выплаты будут продолжаться на
+                  протяжении всей её жизни, даже если ей будет 80 лет и больше.
+                </li>
+              </ul>
+            </div>
+            <div
+              className={cn(styles.textStage4, {
+                [styles.fadeIn]: showTextStage4,
+              })}
+            >
+              <button
+                onClick={() => handleOffAnimate()}
+                className={styles.button__circle}
+              >
+                <svg
+                  width="17"
+                  height="30"
+                  viewBox="0 0 17 30"
+                  fill="none"
+                  style={{ marginRight: 5 }}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 2L2.70711 14.2929C2.31658 14.6834 2.31658 15.3166 2.70711 15.7071L15 28"
+                    stroke="#FAAE17"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          {/* <div
+            className={cn(styles.newTextContainer, styles.textStage2, {
+              [styles.fadeIn]: showTextStage2,
+            })}
+          ></div> */}
         </div>
 
         {/* Second Text Stage */}
-        <div
-          className={cn(styles.newTextContainer, styles.textStage2, {
-            [styles.fadeIn]: showTextStage2,
-          })}
-        >
-          <h2 className={styles.sectionTitle}>Что она делает:</h2>
-          <p className={styles.description2}>
-            Аида решает купить аннуитет. Она вносит одну крупную сумму денег в
-            страховую компанию (например, 1 миллион тенге).
-          </p>
-        </div>
 
         {/* Third Text Stage */}
-        <div
+        {/* <div
           className={cn(styles.newTextContainer, styles.textStage3, {
             [styles.fadeIn]: showTextStage3,
           })}
@@ -233,8 +289,8 @@ export default function Annuity() {
               протяжении всей её жизни, даже если ей будет 90 лет или больше.
             </li>
           </ul>
-        </div>
-        <div
+        </div> */}
+        {/* <div
           className={cn(styles.newTextContainer, styles.textStage4, {
             [styles.fadeIn]: showTextStage4,
           })}
@@ -259,7 +315,7 @@ export default function Annuity() {
               />
             </svg>
           </button>
-        </div>
+        </div> */}
 
         {/* New Image appearing from the right */}
         <div

@@ -11,7 +11,7 @@ const config: Config = {
       sm: { max: "480px" },
       md: "768px",
       mmd: { max: "768px" },
-      lg: "1140px",
+      mlg: { max: "1024px" },
       xl: "1512px",
     },
     extend: {

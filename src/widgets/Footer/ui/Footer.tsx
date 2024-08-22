@@ -1,7 +1,7 @@
 import LogoDesktop from "@/shared/ui/Icon/Logo/LogoDesk";
 import styles from "./styles.module.scss";
 import Link from "next/link";
-import LogoFooterMob from "@/shared/ui/Icon/Logo/LogoFooterMob";
+import LogoMob from "@/shared/ui/Icon/Logo/LogoMob";
 
 export default function Footer() {
   const data = [
@@ -20,10 +20,10 @@ export default function Footer() {
             <LogoDesktop />
           </div>
           <div className="hidden sm:block">
-            <LogoFooterMob />
+            <LogoMob />
           </div>
           <div className="flex flex-col gap-2.5">
-            <p className={styles.rel}>anel.sareken@mail.ru</p>
+            {/* <p className={styles.rel}>anel.sareken@mail.ru</p> */}
             <p className={styles.rel}>+7 (700) 635 63 35</p>
           </div>
           <div className="flex flex-col gap-2.5">

@@ -23,7 +23,7 @@ const PensionAnnuity = () => {
             Пенсионный Аннуитет
           </Heading>
           <Heading component="h2" className={styles.pension__subtitle}>
-            Ваш надёжный финансовый партнёр
+            Получайте свои пенсионные накопления с 40 лет
           </Heading>
           <Button
             onClick={handleOpenModal}
@@ -46,7 +46,6 @@ const PensionAnnuity = () => {
       <ModalComponent
         className="p-8"
         isOpen={isModalOpen}
-      
         onClose={() => setIsModalOpen(false)}
       >
         <div className="flex flex-col gap-8">
@@ -66,8 +65,11 @@ const PensionAnnuity = () => {
             classField={styles.modal__input}
             className={styles.modal__inputinside}
           />
-          <p className={styles.modal__text2}>Ваши данный будут использованы для связи с Вами и не будут переданы третьим лицам.
-          При заполнении формы вы даете свое согласие на обработку персональных данных и маркетинговых активностей.</p>
+          <p className={styles.modal__text2}>
+            Ваши данный будут использованы для связи с Вами и не будут переданы
+            третьим лицам. При заполнении формы вы даете свое согласие на
+            обработку персональных данных и маркетинговых активностей.
+          </p>
         </div>
       </ModalComponent>
     </section>

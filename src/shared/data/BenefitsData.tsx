@@ -8,7 +8,7 @@ export const BenefitsData = [
     title: "Досрочный выход на пенсию",
     desc: "Для женщин - 53 года, для мужчин - 55 лет",
     icon: <FirstBf />,
-    width: "w-[70%]",
+    width: "w-[63%] mmd:w-[95%]",
   },
   {
     title: "Пожизненная пенсия",
@@ -21,7 +21,7 @@ export const BenefitsData = [
     icon: <ThirdBf />,
   },
   {
-    title: "Социальные льготы",
+    title: "Выплаты с защитой от девальвации",
     desc: "Выплаты гарантируются Фондом гарантирования страховых выплат",
     icon: <FourthBf />,
     width: "w-[85%]",

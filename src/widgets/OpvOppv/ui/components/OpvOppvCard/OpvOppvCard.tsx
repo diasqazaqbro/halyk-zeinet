@@ -1,15 +1,17 @@
 import React, { FC } from "react";
 import styles from "./styles.module.scss";
 import Heading from "@/shared/ui/Typography/Heading/Heading";
+import cn from "classnames";
+import Aida from "../../assets/aida.png";
 import Image from "next/image";
 
-interface ICard  {
-  title: string
-  img: any
-  handleClick: any
+interface ICard {
+  title: string;
+  img: any;
+  handleClick: any;
 }
 
-const OpvOppvCard: FC<ICard>  = ({title, img, handleClick}) => {
+const OpvOppvCard: FC<ICard> = ({ title, img, handleClick }) => {
   return (
     <div className={styles.root} onClick={() => handleClick(title)}>
       <Heading className={styles.title} component="h2">
@@ -17,7 +19,16 @@ const OpvOppvCard: FC<ICard>  = ({title, img, handleClick}) => {
       </Heading>
       <div className={styles.imgContainer}>
         <div className={styles.circle}></div>
-        <Image className={styles.img} src={img} alt="Dias" />
+        <Image
+          className={cn(
+            {
+              [styles.topSpacing]: img === Aida,
+            },
+            styles.img
+          )}
+          src={img}
+          alt={title}
+        />
       </div>
     </div>
   );

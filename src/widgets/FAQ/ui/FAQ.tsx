@@ -19,17 +19,19 @@ const Faq = () => {
     >
       <div className="container flex flex-col gap-[18px] sm:gap-2.5 pt-[110px] pb-[50px] sm:pt-[29px] sm:pb-[37px]">
         <Heading component="h1" className="text-black text-center ">
-          Часто задаваемые вопросы
+          Часто задаваемые вопросы?
         </Heading>
-        {data.map((item, index) => (
-          <Accordion
-            key={index}
-            answer={item.answer}
-            question={item.question}
-            isOpen={activeIndex === index}
-            onClick={() => handleItemClick(index)}
-          />
-        ))}
+        <div className="flex flex-col items-center justify-center">
+          {data.map((item, index) => (
+            <Accordion
+              key={index}
+              answer={item.answer}
+              question={item.question}
+              isOpen={activeIndex === index}
+              onClick={() => handleItemClick(index)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

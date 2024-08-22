@@ -621,7 +621,7 @@
     &__mobtext {
       display: block;
       width: 30%;
-      top: 12.5rem;
+      top: 16.5rem;
       position: absolute;
       left: 42%;
     }
@@ -742,7 +742,7 @@
   .coin {
     &_1 {
       display: none;
-    } 
+    }
     &_2 {
       display: none;
     }
@@ -757,7 +757,7 @@
     &__mobtext {
       display: block;
       width: 30%;
-      top: 14.5rem;
+      top: 18.5rem;
       position: absolute;
       left: 42%;
     }
@@ -802,7 +802,7 @@
       width: 31%;
       font-size: 14px;
       position: absolute;
-      top: 16.5rem;
+      top: 20.5rem;
       left: 35%;
     }
   }
@@ -873,7 +873,7 @@
 
 @media (max-width: 405px) {
   .oppv__mobtext {
-    top: 17.5rem;
+    top: 21.5rem;
   }
 
   .mobcoin {
@@ -1027,7 +1027,7 @@
 @media (max-width: 350px) {
   .oppv {
     &__mobtext {
-      top: 20.5rem;
+      top: 24.5rem;
       width: 50%;
     }
   }

@@ -1,8 +1,9 @@
 .wrapper {
   overflow: hidden;
-  padding: 22px 49px;
+  padding: 22px 30px;
   background-color: var(--general);
   border-radius: 10px;
+  width: 90%;
 }
 
 .wrapper .question__container {
@@ -37,7 +38,7 @@
   border-radius: 10px;
   background-color: #fff;
   color: var(--black);
-  padding: 10px 40px;
+  padding: 10px 20px;
   font-size: 18px;
 }
 
@@ -59,6 +60,12 @@
   &.answer__unactive {
     opacity: 0;
     transition: opacity 0.3s ease-out;
+  }
+}
+
+@media (max-width: 1024) {
+  .wrapper {
+    width: 100%;
   }
 }
 

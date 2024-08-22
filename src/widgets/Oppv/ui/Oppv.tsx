@@ -146,7 +146,7 @@ const Oppv = () => {
             </div>
           ))}
         </div>
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between w-[98%]">
           <div className="flex flex-col gap-5">
             <Heading
               component="h1"
@@ -169,7 +169,10 @@ const Oppv = () => {
             >
               {OppvData.map(({ text }, index) => (
                 <li key={index}>
-                  <Heading component="p">{text}</Heading>
+                  <Heading
+                    component="p"
+                    dangerouslySetInnerHTML={{ __html: text }}
+                  />
                 </li>
               ))}
             </ul>
@@ -260,7 +263,7 @@ const Oppv = () => {
           >
             <OrangeArrowRight />
           </button>
-          <div className="flex absolute left-[67%] top-[1%] w-[120%] flex-col gap-10">
+          <div className="flex absolute left-[70%] top-[5%] w-[120%] flex-col gap-10">
             {visibleTexts.map(({ title, desc }, index) => (
               <div
                 key={index}
