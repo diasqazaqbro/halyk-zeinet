@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import { Annuity } from "@/widgets/Annuity";
 import { Benefits } from "@/widgets/Benefits";
 import { Faq } from "@/widgets/FAQ";
-import smoothscroll from 'smoothscroll-polyfill';
+import smoothscroll from "smoothscroll-polyfill";
 import { Oppv } from "@/widgets/Oppv";
 import { OpvOppv } from "@/widgets/OpvOppv";
 import { PensionAnnuity } from "@/widgets/PensionAnnuity";

@@ -6,6 +6,7 @@ import { Navbar } from "@/entities/Navbar";
 import Button, { ButtonSize } from "@/shared/ui/Button/Button";
 import Link from "next/link";
 import { MenuNavbar } from "@/entities/Navbar/ui/component/NavbarMob";
+import LogoMob from "@/shared/ui/Icon/Logo/LogoMob";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -14,11 +15,20 @@ export default function Header() {
     <header className={styles.header}>
       <div className="container flex items-center justify-between">
         <Link href={"/"}>
-          <LogoDesktop />
+          <div className="mmd:hidden block">
+            <LogoDesktop />
+          </div>
+          <div className="hidden mmd:block">
+            <LogoMob />
+          </div>
         </Link>
         <div className="flex items-center" style={{ gap: "2.25rem" }}>
           <Navbar />
-          <Button onClick={() => window.open('tel:+77059944155')} className={styles.header__btn} size={ButtonSize.M}>
+          <Button
+            onClick={() => window.open("tel:+77059944155")}
+            className={styles.header__btn}
+            size={ButtonSize.M}
+          >
             Звонок
           </Button>
         </div>
