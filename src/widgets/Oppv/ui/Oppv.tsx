@@ -151,7 +151,7 @@ const Oppv = () => {
             <Heading
               component="h1"
               className={cn(
-                `mmd:w-[80%]`,
+                `mmd:w-full`,
                 showAll ? styles.showAll : "",
                 isTextFaded ? styles.fadeOut : "",
                 hideAllMob ? styles.hideAllMob : ""
