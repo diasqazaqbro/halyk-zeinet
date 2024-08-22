@@ -17,12 +17,14 @@
     "react": "^18",
     "react-dom": "^18",
     "react-responsive": "^10.0.0",
-    "sass": "^1.77.8"
+    "sass": "^1.77.8",
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/smoothscroll-polyfill": "^0.3.4",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "postcss": "^8",
