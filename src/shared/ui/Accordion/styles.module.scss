@@ -1,9 +1,10 @@
 .wrapper {
   overflow: hidden;
-  padding: 22px 30px;
+  padding: 12px 30px;
   background-color: var(--general);
   border-radius: 10px;
   width: 90%;
+  margin: 10px;
 }
 
 .wrapper .question__container {
@@ -18,7 +19,7 @@
 }
 
 .question {
-  font-size: 32px;
+  font-size: 26px;
   line-height: normal;
 }
 

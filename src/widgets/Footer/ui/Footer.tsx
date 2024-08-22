@@ -23,13 +23,12 @@ export default function Footer() {
             <LogoMob />
           </div>
           <div className="flex flex-col gap-2.5">
-            {/* <p className={styles.rel}>anel.sareken@mail.ru</p> */}
-            <p className={styles.rel}>+7 (700) 635 63 35</p>
+            <p className={styles.rel}>+7 (705) 994 41 55</p>
           </div>
           <div className="flex flex-col gap-2.5">
-            <span className={styles.main}>Лицензия</span>
-            <span className={styles.main}>Пенсионный аннуитет</span>
-            <span className={styles.main}>Правила страхования</span>
+            <span style={{cursor: 'pointer'}} className={styles.main}>Лицензия</span>
+            <span style={{cursor: 'pointer'}} className={styles.main}>Пенсионный аннуитет</span>
+            <span style={{cursor: 'pointer'}} className={styles.main}>Правила страхования</span>
           </div>
         </div>
         <div className={styles.left}>

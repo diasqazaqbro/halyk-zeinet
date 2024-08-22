@@ -63,15 +63,7 @@ const ModalComponent: FC<ModalI> = ({
         {(onClose: () => void) => (
           <>
             {children}
-            <ModalFooter className="flex justify-center items-center">
-              <Button
-                size={ButtonSize.L}
-                onClick={onClose}
-                className="cursor-pointer"
-              >
-                Оставить заявку
-              </Button>
-            </ModalFooter>
+          
           </>
         )}
       </ModalContent>

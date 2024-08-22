@@ -10,6 +10,8 @@ import { cn } from "@nextui-org/react";
 import Button, { ButtonSize } from "@/shared/ui/Button/Button";
 import Input from "@/shared/ui/Input/Input";
 import ModalComponent from "@/shared/ui/Modal/Modal";
+import { sendMail } from "@/shared/api/sendMail";
+import { getPensionSum } from "@/shared/helpers/getPensionSum";
 
 const OpvOppv = () => {
   const [state, setState] = useState(1);
@@ -31,18 +33,20 @@ const OpvOppv = () => {
   };
 
   const handleAgeChange1 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAgePart1(e.target.value);
+    const value = e.target.value;
+  
+    // Ensure the value is a digit and not "0", "1", "2", "3", or "4"
+    if (!isNaN(Number(value)) && !["0", "1", "2", "3"].includes(value)) {
+      setAgePart1(value);
+    } else {
+      console.warn("The first digit of the age cannot be 0, 1, 2, 3, or 4.");
+    }
   };
 
   const handleAgeChange2 = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAgePart2(e.target.value);
   };
 
-  useEffect(() => {
-    const ageCombined = parseInt(agePart1 + agePart2, 10) * 10;
-
-    setAnswer(ageCombined);
-  }, [agePart1, agePart2]);
   const returnBody = () => {
     switch (state) {
       case 1:
@@ -60,7 +64,7 @@ const OpvOppv = () => {
           <div className={styles.inner}>
             <Heading component="h1">Ваш пол</Heading>
             <div className=" flex justify-center gap-12 mt-[30px] sm:flex-col sm:items-center">
-              <SexCard handleClick={handleClick} type="male" />
+              <SexCard handleClick={handleClick} type="men" />
               <SexCard handleClick={handleClick} type="women" />
             </div>
           </div>
@@ -110,9 +114,35 @@ const OpvOppv = () => {
 
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
 
+  const [name, setName] = useState<string>();
+  const [age, setAge] = useState<string>();
+  const [number, setNumber] = useState<string>();
+
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
+
+  const handleSendEmail = () => {
+    const header = "Заявка на пенсионный аннуитет";
+    const text = `Имя отправляющего: ${name}\n\nТелефон: ${number}\n\nВозраст: ${age}\n\nЗапрос отправлен с сайта halyk-zeinet.kz`;
+
+    sendMail(header, text);
+  };
+
+  useEffect(() => 
+    {
+    if (agePart1 && agePart2 && type) {
+      const sexReturn = sex === "men" ? "men" : "women";
+      const ageCombined = parseInt(agePart1 + agePart2, 10);
+      const pension = getPensionSum(ageCombined, sexReturn);
+      if (type === "ОПВ") {
+        setAnswer(pension?.OPV);
+      } else if (type === "ОППВ") {
+        setAnswer(pension?.OPVP);
+      }
+    }
+  }, [agePart1, agePart2, sex, type]);
+
 
   return (
     <section
@@ -158,16 +188,22 @@ const OpvOppv = () => {
         <form className="flex flex-col gap-8">
           <h1 className={styles.modal__title}>Оставьте заявку</h1>
           <Input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Имя"
             classField={styles.modal__input}
             className={styles.modal__inputinside}
           />
           <Input
+            value={number}
+            onChange={(e) => setNumber(e.target.value)}
             placeholder="Телефон"
             classField={styles.modal__input}
             className={styles.modal__inputinside}
           />
           <Input
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
             placeholder="Возраст"
             classField={styles.modal__input}
             className={styles.modal__inputinside}
@@ -178,6 +214,13 @@ const OpvOppv = () => {
             обработку персональных данных и маркетинговых активностей.
           </p>
         </form>
+        <Button
+          onClick={handleSendEmail}
+          size={ButtonSize.L}
+          className=" mx-auto w-[50%] cursor-pointer mt-[20px]"
+        >
+          Оставить заявку
+        </Button>
       </ModalComponent>
     </section>
   );

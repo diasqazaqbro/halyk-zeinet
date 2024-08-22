@@ -2,7 +2,7 @@
 .root {
   width: 100%;
   background: #00846e;
-  padding-top: 120px;
+  padding-top: 50px;
   position: relative;
   overflow: hidden;
   @media (max-width: 1200px) {
@@ -285,7 +285,8 @@
 }
 
 .moveRightCoins {
-  right: 320px;
+  transform: translateX(380%);
+  z-index: 2;
 }
 
 .moveRightCoinsMobile {
@@ -320,7 +321,7 @@
 }
 
 .tg__3fadeOut {
-  left: -150px;
+  left: -250px;
   //сделать анимацию
 }
 
@@ -379,7 +380,7 @@
 }
 
 .texts {
-  margin-top: 100px;
+  margin-top: 130px;
   width: 50%;
   transition: opacity 1s ease-in-out;
   // margin-top: 100px;

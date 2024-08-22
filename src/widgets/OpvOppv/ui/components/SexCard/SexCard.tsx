@@ -4,14 +4,14 @@ import Heading from "@/shared/ui/Typography/Heading/Heading";
 import Image from "next/image";
 
 interface ICard {
-  type: "male" | "women";
+  type: "men" | "women";
   handleClick: any;
 }
 
 const OpvOppvCard: FC<ICard> = ({ type, handleClick }) => {
   return (
     <div className={styles.root} onClick={() => handleClick(type)}>
-      {type === "male" ? (
+      {type === "men" ? (
         <svg
           className={styles.svg}
           width="78"
@@ -41,7 +41,7 @@ const OpvOppvCard: FC<ICard> = ({ type, handleClick }) => {
         </svg>
       )}
       <div className={styles.title}>
-        {type === "male" ? "мужской" : "женский"}
+        {type === "men" ? "мужской" : "женский"}
       </div>
     </div>
   );

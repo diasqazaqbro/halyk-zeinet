@@ -18,7 +18,7 @@ export default function Header() {
         </Link>
         <div className="flex items-center" style={{ gap: "2.25rem" }}>
           <Navbar />
-          <Button className={styles.header__btn} size={ButtonSize.M}>
+          <Button onClick={() => window.open('tel:+77059944155')} className={styles.header__btn} size={ButtonSize.M}>
             Звонок
           </Button>
         </div>
