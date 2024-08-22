@@ -1,0 +1,14 @@
+.nav__container {
+  border-radius: 4px;
+  background: var(--general);
+  box-shadow: 0px 0px 100px 0px rgba(255, 255, 255, 0.05) inset;
+  border: 1px solid #fff;
+  backdrop-filter: blur(25px);
+  padding: 1rem 1.5rem;
+  position: absolute;
+  top: 0rem;
+  margin: 5%;
+  left: 0rem;
+  z-index: 100;
+  width: 90%;
+}

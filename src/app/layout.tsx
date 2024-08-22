@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { NextUIProvider } from "@nextui-org/react";
-import "./styles/globals.scss";
+import localFont from "next/font/local";
 import { Header } from "@/widgets/Header";
-import { Footer } from "@/widgets/Footer";
+import "./styles/globals.scss";
 
 const SfPro = localFont({
   src: "../../public/fonts/SF-Pro.ttf",
