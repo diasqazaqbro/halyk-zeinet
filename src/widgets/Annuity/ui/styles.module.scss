@@ -6,6 +6,7 @@
   position: relative;
   overflow: hidden;
   @media (max-width: 1200px) {
+    
     .inner {
       flex-direction: column-reverse;
     }
@@ -30,6 +31,7 @@
 
     .texts {
       width: 100%;
+      margin-top: 40px;
     }
 
     .description {

@@ -137,8 +137,8 @@ const OpvOppv = () => {
       const pension = getPensionSum(ageCombined, sexReturn);
       if (type === "ОПВ") {
         setAnswer(pension?.OPV);
-      } else if (type === "ОППВ") {
-        setAnswer(pension?.OPVP);
+      } else if (type === "ОППВ" || '0') {
+        setAnswer(pension?.OPVP || '0');
       }
     }
   }, [agePart1, agePart2, sex, type]);
@@ -217,7 +217,7 @@ const OpvOppv = () => {
         <Button
           onClick={handleSendEmail}
           size={ButtonSize.L}
-          className=" mx-auto w-[50%] cursor-pointer mt-[20px]"
+          className="mx-auto md:w-[50%] sm:p-0 cursor-pointer mt-[20px]"
         >
           Оставить заявку
         </Button>
