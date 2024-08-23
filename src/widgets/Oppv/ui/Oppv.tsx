@@ -119,7 +119,7 @@ const Oppv = () => {
           src={"/Dias2.png"}
           width={828}
           height={787}
-          alt="Диас2"
+          alt="Азамат2"
         />
         <div
           className={cn(styles.coin_1, {
@@ -182,7 +182,7 @@ const Oppv = () => {
                 hideAllMob ? styles.hideAllMob : ""
               )}
             >
-              И сейчас он вам расскажет
+             На его примере мы разберемся
             </p>
           </div>
           <div className={styles.oppv__underleft}>
@@ -194,7 +194,7 @@ const Oppv = () => {
               )}
             >
               <button aria-label="Нажми сюда" className={styles.btn__help}>
-                Нажми сюда
+                Нажмите сюда
               </button>
             </div>
             <button
@@ -243,7 +243,7 @@ const Oppv = () => {
               hideAllMob ? styles.hideAllMob : ""
             )}
           >
-            Диас
+            Азамат
           </button>
           <div
             className={cn(
@@ -253,7 +253,7 @@ const Oppv = () => {
             )}
           >
             <button aria-label="Кто" className={styles.who__btn}>
-              Диас
+              Азамат
             </button>
           </div>
           <button
@@ -309,7 +309,7 @@ const Oppv = () => {
             width={840}
             height={805}
             src="/Dias.png"
-            alt="Диасик"
+            alt="Азаматик"
           />
           <Image
             className={cn(
@@ -319,7 +319,7 @@ const Oppv = () => {
             src={"/Dias2.png"}
             width={828}
             height={787}
-            alt="Диас2"
+            alt="Азамат2"
           />
         </div>
       </div>

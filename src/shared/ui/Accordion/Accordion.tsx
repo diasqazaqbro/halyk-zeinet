@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import AccordionOpen from "../Icon/Faq/AccordionOpen";
 import cn from "classnames";
 import styles from "./styles.module.scss";
@@ -55,6 +55,14 @@ export default function Accordion({
 }: AccordionProps) {
   const contentHeight = useRef<HTMLDivElement>(null);
 
+  const formatAnswerWithLineBreaks = (answer: any) => {
+    return answer.split('\n').map((line: any, index: any) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ));
+  };
   return (
     <div className={cn(styles.wrapper, isOpen && "pb-[22px]")}>
       <button
@@ -91,10 +99,10 @@ export default function Accordion({
         <p
           className={cn(
             styles.answer__content,
-            isOpen ? styles.answer__active : styles.answer__unactive
+            isOpen ? styles.ansawer__active : styles.answer__unactive
           )}
         >
-          {answer}
+          {formatAnswerWithLineBreaks(answer)}
         </p>
       </div>
     </div>

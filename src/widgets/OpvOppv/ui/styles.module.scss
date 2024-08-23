@@ -6,19 +6,12 @@
     url("/bg5.png");
   background-size: cover;
   background-position: center center;
-  opacity: 1;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   padding-top: 50px;
   padding-bottom: 50px;
 
   @media (max-width: 480px) {
-    .root {
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     .flex {
       flex-direction: column;
@@ -69,18 +62,18 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
-}
 
-.button__circle svg path {
-  transition: stroke 0.3s ease;
-}
+  &:hover {
+    background-color: #faae17;
+  }
 
-.button__circle:hover {
-  background-color: #faae17;
-}
+  &:hover svg path {
+    stroke: #fff;
+  }
 
-.button__circle:hover svg path {
-  stroke: #fff;
+  svg path {
+    transition: stroke 0.3s ease;
+  }
 }
 
 .padding {
@@ -95,6 +88,11 @@
   display: flex;
   margin-top: 40px;
   justify-content: space-evenly;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    margin-top: 0px;
+  }
 }
 
 .subtitle {
@@ -102,6 +100,10 @@
   font-size: 48px;
   text-align: center;
   margin-top: 20px;
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
 }
 
 .answer {
@@ -114,14 +116,16 @@
   background: #faae17;
   width: fit-content;
   margin: 20px 0;
+
+  @media (max-width: 480px) {
+    font-size: 38px;
+  }
 }
 
 .modal {
   &__title {
     color: #282828;
-
     font-size: 42px;
-    font-style: normal;
     font-weight: 600;
     line-height: 46px;
     letter-spacing: -0.6px;
@@ -129,8 +133,7 @@
 
   &__input {
     border-bottom: 1px solid #d0d5dd;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    padding: 13px 0;
   }
 
   &__inputinside {
@@ -149,7 +152,6 @@
     text-align: center;
     font-size: 12px;
     font-weight: 400;
-    line-height: normal;
     opacity: 0.4;
   }
 }
@@ -172,8 +174,13 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out;
   width: 200px;
-}
 
-.input__box:focus {
-  transform: scale(1.1);
+  &:focus {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 480px) {
+    font-size: 70px;
+    width: 100px;
+  }
 }

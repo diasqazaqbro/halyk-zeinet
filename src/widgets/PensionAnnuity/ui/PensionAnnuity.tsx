@@ -25,6 +25,7 @@ const PensionAnnuity = () => {
     const text = `Имя отправляющего: ${name}\n\nТелефон: ${number}\n\nВозраст: ${age}\n\nЗапрос отправлен с сайта halyk-zeinet.kz`;
   
     sendMail(header, text);
+    setIsModalOpen(false)
   };
   return (
     <section className={cn(styles.pension)}>
@@ -90,7 +91,7 @@ const PensionAnnuity = () => {
           <Button
             onClick={handleSendEmail}
             size={ButtonSize.L}
-            className=" mx-auto md:w-[50%] cursor-pointer"
+            className="mx-auto md:w-[50%] cursor-pointer"
           >
             Оставить заявку
           </Button>

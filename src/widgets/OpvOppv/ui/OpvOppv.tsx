@@ -34,17 +34,24 @@ const OpvOppv = () => {
 
   const handleAgeChange1 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-  
-    // Ensure the value is a digit and not "0", "1", "2", "3", or "4"
+
     if (!isNaN(Number(value)) && !["0", "1", "2", "3"].includes(value)) {
       setAgePart1(value);
+      if (value.length === 1) {
+        document.getElementById("agePart2")?.focus();
+      }
     } else {
       console.warn("The first digit of the age cannot be 0, 1, 2, 3, or 4.");
     }
   };
 
   const handleAgeChange2 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAgePart2(e.target.value);
+    const value = e.target.value;
+      setAgePart2(value);
+  };
+
+  const formatNumberWithSpaces = (number: any) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   };
 
   const returnBody = () => {
@@ -52,7 +59,7 @@ const OpvOppv = () => {
       case 1:
         return (
           <div className={styles.inner}>
-            <Heading component="h1">Вы ОПВ или ОППВ?</Heading>
+            <Heading component="h1">У вас ОПВ или ОППВ?</Heading>
             <div className={styles.flex}>
               <OpvOppvCard handleClick={handleClick} img={Aida} title="ОПВ" />
               <OpvOppvCard handleClick={handleClick} img={Dias} title="ОППВ" />
@@ -83,6 +90,7 @@ const OpvOppv = () => {
                 maxLength={1}
                 className={styles.input__box}
                 value={agePart1}
+                id="agePart1"
               />
               <input
                 onChange={handleAgeChange2}
@@ -90,6 +98,7 @@ const OpvOppv = () => {
                 maxLength={1}
                 className={styles.input__box}
                 value={agePart2}
+                id="agePart2"
               />
             </div>
 
@@ -98,7 +107,7 @@ const OpvOppv = () => {
               году:
             </div>
             <div className="flex justify-center">
-              <div className={styles.answer}>{answer} тенге</div>
+              <div className={styles.answer}>{formatNumberWithSpaces(answer)} тенге</div>
             </div>
             <Button
               onClick={handleOpenModal}
@@ -127,22 +136,21 @@ const OpvOppv = () => {
     const text = `Имя отправляющего: ${name}\n\nТелефон: ${number}\n\nВозраст: ${age}\n\nЗапрос отправлен с сайта halyk-zeinet.kz`;
 
     sendMail(header, text);
+    setIsModalOpen(false);
   };
 
-  useEffect(() => 
-    {
+  useEffect(() => {
     if (agePart1 && agePart2 && type) {
       const sexReturn = sex === "men" ? "men" : "women";
       const ageCombined = parseInt(agePart1 + agePart2, 10);
       const pension = getPensionSum(ageCombined, sexReturn);
       if (type === "ОПВ") {
         setAnswer(pension?.OPV);
-      } else if (type === "ОППВ" || '0') {
-        setAnswer(pension?.OPVP || '0');
+      } else if (type === "ОППВ" || "0") {
+        setAnswer(pension?.OPVP || "0");
       }
     }
   }, [agePart1, agePart2, sex, type]);
-
 
   return (
     <section

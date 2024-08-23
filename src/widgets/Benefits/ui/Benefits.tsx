@@ -9,7 +9,7 @@ const Benefits = () => {
     <section id="benefits" className={styles.benefits}>
       <div className="container">
         <Heading component="h1" className={styles.benefits__title}>
-          Какую выгоду вы получаете
+          Какую выгоду вы получаете?
         </Heading>
         <div className={styles.benefits__card}>
           {BenefitsData.map((benefit, index) => (

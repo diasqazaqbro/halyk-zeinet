@@ -155,10 +155,10 @@ export default function Annuity() {
             <div className={styles.button__container}>
               <div className={styles.arrowContainer__2}>
                 <Image className={styles.arrow__2} src={Arrow1} alt="tg" />
-                <div className={styles.button__2}>Нажми сюда</div>
+                <div className={styles.button__2}>Нажмите сюда</div>
               </div>
               <div className={styles.button__title}>
-                На ее примере мы разберемся
+                На её примере мы разберемся
               </div>
               <button
                 onClick={() => handleStartAnimation()}
