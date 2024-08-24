@@ -18,6 +18,7 @@ const Button = ({ children, className, size, ...rest }: IButton) => {
   return (
     <button
       type="submit"
+      aria-label="button"
       className={cn(className, size && styles[size], styles.button)}
       {...rest}
     >
