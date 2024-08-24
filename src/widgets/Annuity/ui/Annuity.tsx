@@ -101,8 +101,8 @@ export default function Annuity() {
                 [styles.moveRightCoinsMobile]: startAnimationMobile,
               })}
               src={Tg1}
-              width={172}
-              height={178}
+              width={178}
+              height={181}
               alt="tg"
             />
           </div>
