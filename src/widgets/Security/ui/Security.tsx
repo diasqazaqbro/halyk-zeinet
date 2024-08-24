@@ -20,12 +20,6 @@ export default function Security() {
                   Финансовые показатели
                 </Heading>
                 <Heading component="p">
-                  {/* Lorem ipsum dolor sit amet consectetur. Nulla nunc congue
-                  viverra in. Scelerisque morbi facilisis ullamcorper sed ac
-                  mauris risus. Ac tempus fermentum laoreet diam. Vitae amet
-                  mauris ac nec viverra nibh porta. mauris ac nec viverra nibh
-                  porta. mauris ac nec viverra nibh porta. mauris ac nec viverra
-                  nibh porta. */}
                   Показатели фонда гарантирования выплат. Компания является
                   участником Фонда гарантирования страховых выплат.
                 </Heading>
@@ -51,13 +45,7 @@ export default function Security() {
                   <Heading component="h3" className="mb-[6px]">
                     Сертификаты
                   </Heading>
-                  <Heading component="p">
-                    {/* Lorem ipsum dolor sit amet consectetur. Nulla nunc congue
-                    viverra in. Scelerisque morbi facilisis ullamcorper sed ac
-                    mauris risus. Ac tempus fermentum laoreet diam. Vitae amet
-                    mauris ac nec viverra nibh porta. */}
-                    Перестраховочная защита
-                  </Heading>
+                  <Heading component="p">Перестраховочная защита</Heading>
                 </div>
                 <Image
                   className={cn(
