@@ -134,7 +134,7 @@ const PensionAnnuity = () => {
           <Button
             onClick={handleSendEmail}
             size={ButtonSize.L}
-            className="mx-auto md:w-[50%]  cursor-pointer"
+            className={cn("mx-auto md:w-[50%] cursor-pointer", styles.btn__message)}
           >
             Оставить заявку
           </Button>

@@ -112,6 +112,15 @@
 }
 
 @media (max-width: 500px) {
+  .modal {
+    &__title {
+      font-size: 32px;
+    }
+  }
+
+  .btn__message {
+    font-size: 14px;
+  }
   .error {
     font-size: 12px;
   }
