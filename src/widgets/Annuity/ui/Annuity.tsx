@@ -101,6 +101,7 @@ export default function Annuity() {
             />
           </div>
           <button
+            aria-label="Slide"
             onClick={() => handleStartAnimationMobile()}
             className={styles.button__circle_mobile}
           >
@@ -161,6 +162,7 @@ export default function Annuity() {
                 На её примере мы разберемся
               </div>
               <button
+                aria-label="Slide"
                 onClick={() => handleStartAnimation()}
                 className={styles.button__circle}
               >
@@ -237,6 +239,7 @@ export default function Annuity() {
               })}
             >
               <button
+                aria-label="Slide"
                 onClick={() => handleOffAnimate()}
                 className={styles.button__circle}
               >
