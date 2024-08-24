@@ -47,11 +47,11 @@ const OpvOppv = () => {
 
   const handleAgeChange2 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-      setAgePart2(value);
+    setAgePart2(value);
   };
 
   const formatNumberWithSpaces = (number: any) => {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    return number?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   };
 
   const returnBody = () => {
@@ -107,7 +107,9 @@ const OpvOppv = () => {
               году:
             </div>
             <div className="flex justify-center">
-              <div className={styles.answer}>{formatNumberWithSpaces(answer)} тенге</div>
+              <div className={styles.answer}>
+                {formatNumberWithSpaces(answer)} тенге
+              </div>
             </div>
             <Button
               onClick={handleOpenModal}
@@ -123,20 +125,54 @@ const OpvOppv = () => {
 
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
 
-  const [name, setName] = useState<string>();
-  const [age, setAge] = useState<string>();
-  const [number, setNumber] = useState<string>();
+  const [name, setName] = useState<string>("");
+  const [age, setAge] = useState<string>("");
+  const [number, setNumber] = useState<string>("");
+
+  const [errors, setErrors] = useState<{
+    name?: string;
+    age?: string;
+    number?: string;
+  }>({});
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
 
-  const handleSendEmail = () => {
-    const header = "Заявка на пенсионный аннуитет";
-    const text = `Имя отправляющего: ${name}\n\nТелефон: ${number}\n\nВозраст: ${age}\n\nЗапрос отправлен с сайта halyk-zeinet.kz`;
+  const handleValidation = () => {
+    let validationErrors: { name?: string; age?: string; number?: string } = {};
+    let isValid = true;
 
-    sendMail(header, text);
-    setIsModalOpen(false);
+    if (!name.trim()) {
+      validationErrors.name = "Имя обязательно для заполнения";
+      isValid = false;
+    }
+
+    const phoneRegex = /^[0-9]{10,12}$/;
+    if (!phoneRegex.test(number)) {
+      validationErrors.number =
+        "Введите корректный номер телефона (10-12 цифр)";
+      isValid = false;
+    }
+
+    const ageNumber = parseInt(age);
+    if (!age || isNaN(ageNumber) || ageNumber < 18 || ageNumber > 100) {
+      validationErrors.age = "Введите возраст от 18 до 100 лет";
+      isValid = false;
+    }
+
+    setErrors(validationErrors);
+    return isValid;
+  };
+
+  const handleSendEmail = () => {
+    if (handleValidation()) {
+      const header = "Заявка на пенсионный аннуитет";
+      const text = `Имя отправляющего: ${name}\n\nТелефон: ${number}\n\nВозраст: ${age}\n\nЗапрос отправлен с сайта halyk-zeinet.kz`;
+
+      sendMail(header, text);
+      setIsModalOpen(false);
+    }
   };
 
   useEffect(() => {
@@ -193,42 +229,51 @@ const OpvOppv = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       >
-        <form className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8">
           <h1 className={styles.modal__title}>Оставьте заявку</h1>
-          <Input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Имя"
-            classField={styles.modal__input}
-            className={styles.modal__inputinside}
-          />
-          <Input
-            value={number}
-            onChange={(e) => setNumber(e.target.value)}
-            placeholder="Телефон"
-            classField={styles.modal__input}
-            className={styles.modal__inputinside}
-          />
-          <Input
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-            placeholder="Возраст"
-            classField={styles.modal__input}
-            className={styles.modal__inputinside}
-          />
+          <label>
+            <Input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Имя"
+              classField={styles.modal__input}
+              className={styles.modal__inputinside}
+            />
+            {errors.name && <p className={styles.error}>{errors.name}</p>}{" "}
+          </label>
+          <label>
+            <Input
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
+              placeholder="Телефон"
+              classField={styles.modal__input}
+              className={styles.modal__inputinside}
+            />
+            {errors.number && <p className={styles.error}>{errors.number}</p>}{" "}
+          </label>
+          <label>
+            <Input
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+              placeholder="Возраст"
+              classField={styles.modal__input}
+              className={styles.modal__inputinside}
+            />
+            {errors.age && <p className={styles.error}>{errors.age}</p>}{" "}
+          </label>
           <p className={styles.modal__text2}>
-            Ваши данный будут использованы для связи с Вами и не будут переданы
+            Ваши данные будут использованы для связи с Вами и не будут переданы
             третьим лицам. При заполнении формы вы даете свое согласие на
             обработку персональных данных и маркетинговых активностей.
           </p>
-        </form>
-        <Button
-          onClick={handleSendEmail}
-          size={ButtonSize.L}
-          className="mx-auto md:w-[50%] sm:p-0 cursor-pointer mt-[20px]"
-        >
-          Оставить заявку
-        </Button>
+          <Button
+            onClick={handleSendEmail}
+            size={ButtonSize.L}
+            className="mx-auto md:w-[50%]  cursor-pointer"
+          >
+            Оставить заявку
+          </Button>
+        </div>
       </ModalComponent>
     </section>
   );
