@@ -17,8 +17,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-responsive": "^10.0.0",
-    "sass": "^1.77.8",
-    "smoothscroll-polyfill": "^0.4.4"
+    "sass": "^1.77.8"
   },
   "devDependencies": {
     "@types/node": "^20",
