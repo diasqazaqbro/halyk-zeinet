@@ -76,6 +76,8 @@ export default function Annuity() {
       <Image
         className={cn(styles.tg__3, { [styles.tg__3fadeOut]: startAnimation })}
         src={Tg2}
+        width={425}
+        height={432}
         alt="tg"
       />
       <div id="annuity" className="container">
@@ -90,6 +92,8 @@ export default function Annuity() {
                 [styles.moveLeftCoinsMobile]: startAnimationMobile,
               })}
               src={Tg3}
+              width={142}
+              height={144}
               alt="tg"
             />
             <Image
@@ -97,6 +101,8 @@ export default function Annuity() {
                 [styles.moveRightCoinsMobile]: startAnimationMobile,
               })}
               src={Tg1}
+              width={172}
+              height={178}
               alt="tg"
             />
           </div>
@@ -115,14 +121,16 @@ export default function Annuity() {
               <path
                 d="M2 2L14.2929 14.2929C14.6834 14.6834 14.6834 15.3166 14.2929 15.7071L2 28"
                 stroke="#FAAE17"
-                stroke-width="4"
-                stroke-linecap="round"
+                strokeWidth="4"
+                strokeLinecap="round"
               />
             </svg>
           </button>
           <Image
             className={cn(styles.img, { [styles.fadeOut]: startAnimation })}
             src={MainImage}
+            width={496}
+            height={772}
             alt="annuity"
           />
           <Image
@@ -130,6 +138,8 @@ export default function Annuity() {
               [styles.img__mobilefadeOut]: startAnimationMobile,
             })}
             src={MainImage2}
+            width={382}
+            height={484}
             alt="annuity"
           />
           {/* <div
@@ -176,8 +186,8 @@ export default function Annuity() {
                   <path
                     d="M2 2L14.2929 14.2929C14.6834 14.6834 14.6834 15.3166 14.2929 15.7071L2 28"
                     stroke="#FAAE17"
-                    stroke-width="4"
-                    stroke-linecap="round"
+                    strokeWidth="4"
+                    strokeLinecap="round"
                   />
                 </svg>
               </button>
@@ -326,7 +336,13 @@ export default function Annuity() {
             [styles.moveIn]: showSecondImage,
           })}
         >
-          <Image src={MainImage3} alt="annuity-mobile" className={styles.img} />
+          <Image
+            src={MainImage3}
+            width={667}
+            height={754}
+            alt="annuity-mobile"
+            className={styles.img}
+          />
         </div>
         <div
           className={cn(styles.appearFromRight, {
@@ -335,6 +351,8 @@ export default function Annuity() {
         >
           <Image
             src={MainImage4}
+            width={360}
+            height={339}
             alt="annuity-mobile"
             className={styles.img__mobile}
           />
