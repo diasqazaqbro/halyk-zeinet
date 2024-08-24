@@ -182,7 +182,7 @@ const Oppv = () => {
                 hideAllMob ? styles.hideAllMob : ""
               )}
             >
-             На его примере мы разберемся
+              На его примере мы разберемся
             </p>
           </div>
           <div className={styles.oppv__underleft}>
