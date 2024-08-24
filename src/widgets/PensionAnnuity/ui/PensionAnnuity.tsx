@@ -8,7 +8,7 @@ import Image from "next/image";
 import ModalComponent from "@/shared/ui/Modal/Modal";
 import Input from "@/shared/ui/Input/Input";
 import { sendMail } from "@/shared/api/sendMail";
-
+// 
 const PensionAnnuity = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [name, setName] = useState<string>("");

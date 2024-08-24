@@ -10,7 +10,6 @@
   -o-background-size: cover;
   background-size: cover;
   padding-bottom: 50px;
-
 }
 
 .item {
@@ -32,6 +31,18 @@
 
 .inner__card {
   width: 52%;
+}
+
+.card__info {
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media (max-width: 768px) {
+  .card__info {
+    font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 1024px) {

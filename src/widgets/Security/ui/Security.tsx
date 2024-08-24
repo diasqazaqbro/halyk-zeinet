@@ -16,9 +16,9 @@ export default function Security() {
           <div className={styles.inner__card}>
             <div className={styles.item}>
               <div className={styles.item__text}>
-                <Heading component="h3" className="mb-[6px]">
+                <h2 className={cn("mb-[6px]", styles.card__info)}>
                   Финансовые показатели
-                </Heading>
+                </h2>
                 <Heading component="p">
                   Показатели фонда гарантирования выплат. Компания является
                   участником Фонда гарантирования страховых выплат.
@@ -27,9 +27,9 @@ export default function Security() {
             </div>
             <div className={styles.item}>
               <div className={styles.item__text}>
-                <Heading component="h3" className="mb-[6px]">
+                <h2 className={cn("mb-[6px]", styles.card__info)}>
                   Справка о гос. регистрации
-                </Heading>
+                </h2>
                 <Heading component="p">
                   Дополнительная защита от немецкого перестраховочного общества
                   General Reinsurance AG (Рейтинг S&P: AA+ , Рейтинг Moody`s:
@@ -42,9 +42,9 @@ export default function Security() {
             <div className={cn(styles.item, "overflow-hidden h-[95%]")}>
               <div className="flex flex-col">
                 <div className={styles.item__text}>
-                  <Heading component="h3" className="mb-[6px]">
+                  <h2 className={cn("mb-[6px]", styles.card__info)}>
                     Сертификаты
-                  </Heading>
+                  </h2>
                   <Heading component="p">Перестраховочная защита</Heading>
                 </div>
                 <Image
@@ -61,9 +61,7 @@ export default function Security() {
           <div className="w-[24%] mlg:w-full">
             <div className={styles.item}>
               <div className={styles.item__text}>
-                <Heading component="h3" className="mb-[6px]">
-                  Лицензия
-                </Heading>
+                <h2 className={cn("mb-[6px]", styles.card__info)}>Лицензия</h2>
                 <Heading component="p">
                   Наша компания является участником Фонда гарантирования
                   страховых выплат.
