@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className="container flex items-center justify-between">
-        <Link href={"/"} passHref>
+        <Link href={"/"} aria-label="На главную">
           <div className="mmd:hidden block">
             <LogoDesktop />
           </div>
