@@ -14,7 +14,7 @@ const BenefitsCard = ({ title, desc, icon, width }: BenefitsProps) => {
   return (
     <div className={styles.card}>
       <div className="flex flex-col gap-[15px] pb-[30px] mmd:pb-[0px]">
-        <h3 className={styles.card__title}>{title}</h3>
+        <h2 className={styles.card__title}>{title}</h2>
         <Heading
           component="p"
           className={cn("opacity-80", width, styles.card__desc)}
