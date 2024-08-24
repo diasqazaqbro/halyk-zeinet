@@ -84,8 +84,8 @@ const PensionAnnuity = () => {
             className={styles.img}
             width={742}
             height={756}
-            src={"/asianBitch.png"}
-            alt="Азияточка"
+            src={"/Laura.png"}
+            alt="Лаура"
           />
         </div>
       </div>
@@ -134,7 +134,10 @@ const PensionAnnuity = () => {
           <Button
             onClick={handleSendEmail}
             size={ButtonSize.L}
-            className={cn("mx-auto md:w-[50%] cursor-pointer", styles.btn__message)}
+            className={cn(
+              "mx-auto md:w-[50%] cursor-pointer",
+              styles.btn__message
+            )}
           >
             Оставить заявку
           </Button>
