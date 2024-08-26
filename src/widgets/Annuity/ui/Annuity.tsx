@@ -142,14 +142,14 @@ export default function Annuity() {
             height={484}
             alt="annuity"
           />
-          {/* <div
+          <div
             className={cn(styles.arrowContainer__1, {
               [styles.fadeOut]: startAnimation,
             })}
           >
             <Image className={styles.arrow__1} src={Arrow2} alt="tg" />
-            <div className={styles.button__1}>Аида</div>
-          </div> */}
+            <div className={styles.button__1}>Лаура</div>
+          </div>
           <div
             className={cn(styles.texts, {
               [styles.fadeOut]: startAnimation || startAnimationMobile,
@@ -227,10 +227,6 @@ export default function Annuity() {
             >
               <h2 className={styles.sectionTitle}>Как это работает:</h2>
               <ul className={styles.stepsList}>
-                <li>
-                  <strong>Взнос:</strong> Лаура делает один крупный взнос или
-                  несколько взносов в страховую компанию.
-                </li>
                 <li>
                   <strong>Регулярные выплаты:</strong> Когда Лауре исполнится 55
                   лет, она начнёт получать ежемесячные выплаты с ежегодной

@@ -93,7 +93,8 @@ export default function Footer() {
             <LogoFooterMob />
           </div>
           <div className="flex flex-col gap-2.5">
-            <p className={styles.rel}>+7 (705) 994 41 55</p>
+            <p className={styles.rel}>anel.sareken@mail.ru</p>
+            <p className={styles.rel}>+7 (701) 111 09 11</p>
           </div>
           <div className="flex flex-col gap-2.5">
             <span style={{ cursor: "pointer" }} className={styles.main}>

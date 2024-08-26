@@ -23,6 +23,7 @@ export default function Security() {
                   Показатели фонда гарантирования выплат. Компания является
                   участником Фонда гарантирования страховых выплат.
                 </Heading>
+                <div className={styles.download}>Скачать</div>
               </div>
             </div>
             <div className={styles.item}>
@@ -35,6 +36,7 @@ export default function Security() {
                   General Reinsurance AG (Рейтинг S&P: AA+ , Рейтинг Moody`s:
                   Aal)
                 </Heading>
+                <div className={styles.download}>Скачать</div>
               </div>
             </div>
           </div>
@@ -46,6 +48,7 @@ export default function Security() {
                     Сертификаты
                   </h2>
                   <Heading component="p">Перестраховочная защита</Heading>
+                  <div className={styles.download}>Скачать</div>
                 </div>
                 <Image
                   className={cn(
@@ -66,6 +69,7 @@ export default function Security() {
                   Наша компания является участником Фонда гарантирования
                   страховых выплат.
                 </Heading>
+                <div className={styles.download}>Скачать</div>
               </div>
             </div>
           </div>

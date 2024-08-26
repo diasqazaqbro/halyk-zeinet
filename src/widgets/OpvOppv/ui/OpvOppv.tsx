@@ -12,14 +12,13 @@ import Input from "@/shared/ui/Input/Input";
 import ModalComponent from "@/shared/ui/Modal/Modal";
 import { sendMail } from "@/shared/api/sendMail";
 import { getPensionSum } from "@/shared/helpers/getPensionSum";
+import CodeInput from "@/shared/ui/CodeInput/CodeInput";
 
 const OpvOppv = () => {
   const [state, setState] = useState(1);
   const [type, setType] = useState();
   const [sex, setSex] = useState();
-  const [agePart1, setAgePart1] = useState("0");
-  const [agePart2, setAgePart2] = useState("0");
-
+  const [otp, setOtp] = useState("");
   const [answer, setAnswer] = useState(0);
   const handleClick = (type: any) => {
     if (state === 1) {
@@ -30,24 +29,6 @@ const OpvOppv = () => {
       setSex(type);
       setState(3);
     }
-  };
-
-  const handleAgeChange1 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-
-    if (!isNaN(Number(value)) && !["0", "1", "2", "3"].includes(value)) {
-      setAgePart1(value);
-      if (value.length === 1) {
-        document.getElementById("agePart2")?.focus();
-      }
-    } else {
-      console.warn("The first digit of the age cannot be 0, 1, 2, 3, or 4.");
-    }
-  };
-
-  const handleAgeChange2 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setAgePart2(value);
   };
 
   const formatNumberWithSpaces = (number: any) => {
@@ -84,24 +65,11 @@ const OpvOppv = () => {
             </Heading>
 
             <div className={styles.input__container}>
-              <input
-                onChange={handleAgeChange1}
-                type="text"
-                maxLength={1}
-                className={styles.input__box}
-                value={agePart1}
-                id="agePart1"
-              />
-              <input
-                onChange={handleAgeChange2}
-                type="text"
-                maxLength={1}
-                className={styles.input__box}
-                value={agePart2}
-                id="agePart2"
+              <CodeInput
+                count={2}
+                onChange={(otp: string) => setOtp(otp)}
               />
             </div>
-
             <div className={styles.subtitle}>
               Минимальные накопления для заключения пенсионного аннуитета в 2024
               году:
@@ -176,17 +144,16 @@ const OpvOppv = () => {
   };
 
   useEffect(() => {
-    if (agePart1 && agePart2 && type) {
+    if (otp && type) {
       const sexReturn = sex === "men" ? "men" : "women";
-      const ageCombined = parseInt(agePart1 + agePart2, 10);
-      const pension = getPensionSum(ageCombined, sexReturn);
+      const pension = getPensionSum(Number(otp), sexReturn);
       if (type === "ОПВ") {
         setAnswer(pension?.OPV);
       } else if (type === "ОППВ" || "0") {
         setAnswer(pension?.OPVP || "0");
       }
     }
-  }, [agePart1, agePart2, sex, type]);
+  }, [otp, sex, type]);
 
   return (
     <section
@@ -269,7 +236,10 @@ const OpvOppv = () => {
           <Button
             onClick={handleSendEmail}
             size={ButtonSize.L}
-            className={cn("mx-auto md:w-[50%] cursor-pointer", styles.btn__message)}
+            className={cn(
+              "mx-auto md:w-[50%] cursor-pointer",
+              styles.btn__message
+            )}
           >
             Оставить заявку
           </Button>

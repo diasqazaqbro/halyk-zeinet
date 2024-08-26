@@ -39,6 +39,12 @@
   line-height: normal;
 }
 
+.download {
+  text-align: right;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .card__info {
     font-size: 1.25rem;
