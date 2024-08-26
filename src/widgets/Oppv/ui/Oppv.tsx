@@ -157,7 +157,7 @@ const Oppv = () => {
                 hideAllMob ? styles.hideAllMob : ""
               )}
             >
-              А кто такие ОПВ и ОППВ?
+              В чем разница между ОПВ и ОППВ?
             </Heading>
             <ul
               className={cn(
@@ -215,7 +215,7 @@ const Oppv = () => {
                 showAll ? styles.showAll : ""
               )}
             >
-              И сейчас он вам расскажет
+              На его примере мы разберемся
             </p>
           </div>
         </div>
