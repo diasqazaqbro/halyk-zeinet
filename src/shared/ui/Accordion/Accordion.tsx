@@ -32,9 +32,9 @@ export const data = [
   {
     question: "4.	Какие документы нужны для заключения договора?",
     answer: `
-    1 Документ, удостоверяющий личность;\n
+    1 Документ удостоверяющий личность;\n
     2 Выписка из ЕНПФ;\n
-    3 Документ, удостоверяющий личность выгодоприобретателя (наследника);\n
+    3 Документ удостоверяющий личность выгодоприобретателя (наследника);\n
     4 Банковские реквизиты.
     `,
   },
@@ -56,7 +56,7 @@ export default function Accordion({
   const contentHeight = useRef<HTMLDivElement>(null);
 
   const formatAnswerWithLineBreaks = (answer: any) => {
-    return answer.split('\n').map((line: any, index: any) => (
+    return answer.split("\n").map((line: any, index: any) => (
       <React.Fragment key={index}>
         {line}
         <br />

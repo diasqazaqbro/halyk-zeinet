@@ -2,7 +2,6 @@
 .root {
   width: 100%;
   background: #00846e;
-  padding-top: 50px;
   position: relative;
   overflow: hidden;
   @media (max-width: 1200px) {
@@ -140,7 +139,7 @@
 
     .title {
       font-weight: 700;
-      font-size: 20px;
+      font-size: 30px;
       margin-bottom: 10px;
     }
 
@@ -262,7 +261,7 @@
 }
 
 .img {
-  margin-top: 130px;
+  margin-top: 120px;
   transition: transform 1s ease-in-out, opacity 1s ease-in-out,
     visibility 1s ease-in-out;
   opacity: 1;
@@ -328,7 +327,7 @@
 
 .arrowContainer__1 {
   position: absolute;
-  left: 290px;
+  left: 190px;
   bottom: 110px;
   display: flex;
   flex-direction: column;
@@ -340,7 +339,7 @@
 .arrowContainer__2 {
   position: absolute;
   top: -95px;
-  right: 45px;
+  right: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -383,8 +382,8 @@
 .texts {
   margin-top: 130px;
   width: 50%;
+  margin-right: 50px;
   transition: opacity 1s ease-in-out;
-  // margin-top: 100px;
 }
 
 .description {
@@ -405,7 +404,7 @@
 
 .button__title {
   font-weight: 400;
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .button__circle {
@@ -459,26 +458,26 @@
 
 .title {
   font-weight: 700;
-  font-size: 86px;
+  font-size: 56px;
   margin-bottom: 10px;
 }
 
 .subtitle {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   margin-bottom: 20px;
 }
 
 .sectionTitle {
   font-weight: 700;
-  font-size: 43px;
+  font-size: 33px;
   margin-bottom: 10px;
   margin-top: 40px;
 }
 
 .description {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   margin-bottom: 20px;
 }
 
@@ -488,7 +487,7 @@
   margin: 0 0 40px 0;
 
   li {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 400;
     margin-bottom: 10px;
     position: relative;
@@ -551,11 +550,12 @@
   position: absolute; /* Position it absolutely */
   right: -100%; /* Start it off-screen to the right */
   bottom: 0;
-  opacity: 0;
-  transition: right 1s ease-in-out, opacity 1s ease-in-out;
+  visibility: hidden;  
+  transition: right 1s ease-in-out, visibility 1s ease-in-out;
 }
 
 .appearFromRight.moveIn {
-  right: 100px; /* Bring it to the correct position */
-  opacity: 1;
+  right: 100px;
+  visibility: visible; 
+  transition: right 1s ease-in-out, opacity 1s ease-in-out, visibility 0s 0s;
 }

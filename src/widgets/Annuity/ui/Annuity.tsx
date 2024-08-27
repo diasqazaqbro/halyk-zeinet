@@ -129,8 +129,8 @@ export default function Annuity() {
           <Image
             className={cn(styles.img, { [styles.fadeOut]: startAnimation })}
             src={MainImage}
-            width={496}
-            height={772}
+            width={396}
+            height={672}
             alt="annuity"
           />
           <Image
@@ -155,8 +155,7 @@ export default function Annuity() {
               [styles.fadeOut]: startAnimation || startAnimationMobile,
             })}
           >
-            <Heading component="h1">Что такое пенсионный аннуитет?</Heading>
-            <h1 className={styles.title}></h1>
+            <h1 className={styles.title}>Что такое пенсионный аннуитет?</h1>
             <p className={styles.description}>
               Пенсионный аннуитет - это государственная программа, разработанная
               Национальным Банком Республики Казахстан, позволяющая досрочно
@@ -334,8 +333,8 @@ export default function Annuity() {
         >
           <Image
             src={MainImage3}
-            width={667}
-            height={754}
+            width={617}
+            height={704}
             alt="annuity-mobile"
             className={styles.img}
           />

@@ -53,7 +53,7 @@ export default function Security() {
                 <Image
                   className={cn(
                     styles.img,
-                    "relative top-[3.5rem] mlg:top-[0.5rem]"
+                    "relative top-[5rem] mlg:top-[0.5rem]"
                   )}
                   alt="tg"
                   src={image}
