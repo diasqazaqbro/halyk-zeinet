@@ -78,7 +78,7 @@ export default function Security() {
                 </h2>
                 <Heading component="p">
                   Дополнительная защита от немецкого перестраховочного общества
-                  General Reinsurance AG (Рейтинг S&P: AA+ , Рейтинг Moody's:
+                  General Reinsurance AG (Рейтинг S&P: AA+ , Рейтинг Moody`s:
                   Aal)
                 </Heading>
                 <div className={styles.download}>Скачать</div>
