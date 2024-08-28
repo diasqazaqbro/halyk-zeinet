@@ -5,10 +5,15 @@ import styles from "./styles.module.scss";
 import Heading from "@/shared/ui/Typography/Heading/Heading";
 import Button, { ButtonSize } from "@/shared/ui/Button/Button";
 import Image from "next/image";
-import ModalComponent from "@/shared/ui/Modal/Modal";
 import Input from "@/shared/ui/Input/Input";
 import { sendMail } from "@/shared/api/sendMail";
-//
+// import dynamic from "next/dynamic";
+import ModalComponent from "@/shared/ui/Modal/Modal";
+
+// const ModalComponent = dynamic(() => import("@/shared/ui/Modal/Modal"), {
+//   ssr: false,
+// });
+
 const PensionAnnuity = () => {
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
   const [name, setName] = React.useState<string>("");
