@@ -8,6 +8,7 @@ import Head from "next/head";
 const SfPro = localFont({
   src: "../../public/fonts/SF-Pro.ttf",
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
