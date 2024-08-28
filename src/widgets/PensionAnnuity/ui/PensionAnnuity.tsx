@@ -87,13 +87,12 @@ const PensionAnnuity = () => {
             height={738}
             src="/Laura.png"
             alt="Лаура"
-            // loading="lazy"
             sizes="(max-width: 320px) 280px, 
           (max-width: 480px) 480px, 
           (max-width: 768px) 724px, 
           (max-width: 1200px) 1000px, 
           1448px"
-            priority={true}
+            priority
           />
         </div>
       </div>
