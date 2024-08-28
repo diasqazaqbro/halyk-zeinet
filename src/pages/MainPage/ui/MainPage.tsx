@@ -11,7 +11,7 @@ const OpvOppv = lazy(() => import("@/widgets/OpvOppv/ui/OpvOppv"));
 const Benefits = lazy(() => import("@/widgets/Benefits/ui/Benefits"));
 const Security = lazy(() => import("@/widgets/Security/ui/Security"));
 const Faq = lazy(() => import("@/widgets/FAQ/ui/FAQ"));
-
+// 
 export default function MainPage() {
   return (
     <>
