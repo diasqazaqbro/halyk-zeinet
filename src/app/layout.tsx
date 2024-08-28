@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { NextUIProvider } from "@nextui-org/react";
 import localFont from "next/font/local";
-import { Header } from "@/widgets/Header";
+import Header from "@/widgets/Header/ui/Header";
 import "./styles/globals.scss";
 import Head from "next/head";
 

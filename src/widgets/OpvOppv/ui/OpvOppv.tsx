@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import Heading from "@/shared/ui/Typography/Heading/Heading";
-import Dias from "./assets/dias.png";
-import Aida from "./assets/aida.png";
+import Dias from "./assets/dias.webp";
+import Aida from "./assets/aida.webp";
 import { OpvOppvCard } from "./components/OpvOppvCard";
 import { SexCard } from "./components/SexCard";
 import { cn } from "@nextui-org/react";
