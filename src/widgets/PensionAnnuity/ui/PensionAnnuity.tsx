@@ -83,8 +83,8 @@ const PensionAnnuity = () => {
         <div className="mb-[-1px]">
           <Image
             className={cn(styles.img, isLoaded ? styles.img_loaded : "")}
-            width={1484}
-            height={1513}
+            width={724}
+            height={738}
             src={"/Laura.png"}
             alt="Лаура"
             loading="lazy"
