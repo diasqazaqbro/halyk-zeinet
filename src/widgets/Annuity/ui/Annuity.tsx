@@ -8,7 +8,7 @@ import MainImage2 from "./assets/imageMobile.png";
 import MainImage3 from "./assets/animateImage.webp";
 import MainImage4 from "./assets/animateImage2.png";
 import Tg1 from "./assets/entitiy/tg1.png";
-import Tg2 from "./assets/entitiy/tg2.webp";
+import Tg2 from "./assets/entitiy/tg2.png";
 import Tg3 from "./assets/entitiy/tg3.png";
 import Arrow1 from "./assets/entitiy/arrow.png";
 import Arrow2 from "./assets/entitiy/arrow2.png";
