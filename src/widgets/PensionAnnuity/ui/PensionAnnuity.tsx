@@ -87,6 +87,7 @@ const PensionAnnuity = () => {
             height={756}
             src={"/Laura.png"}
             alt="Лаура"
+            priority
             loading="lazy"
             onLoad={() => setIsLoaded(true)}
           />
