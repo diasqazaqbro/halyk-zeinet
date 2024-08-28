@@ -310,7 +310,7 @@ const Oppv = () => {
             priority
             width={840}
             height={805}
-            src="/Dias.png"
+            src="/Dias.webp"
             alt="Азаматик"
           />
           <Image

@@ -85,7 +85,7 @@ const PensionAnnuity = () => {
             className={styles.img}
             width={724}
             height={738}
-            src="/Laura.png"
+            src="/Laura.webp"
             alt="Лаура"
             sizes="(max-width: 320px) 280px, 
           (max-width: 480px) 480px, 
