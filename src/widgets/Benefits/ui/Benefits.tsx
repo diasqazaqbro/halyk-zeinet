@@ -4,7 +4,7 @@ import Heading from "@/shared/ui/Typography/Heading/Heading";
 import { BenefitsData } from "@/shared/data/BenefitsData";
 import { BenefitsCard } from "@/entities/BenefitsCard";
 
-const Benefits = () => {
+export const Benefits = () => {
   return (
     <section id="benefits" className={styles.benefits}>
       <div className="container">
@@ -27,4 +27,3 @@ const Benefits = () => {
   );
 };
 
-export default Benefits;

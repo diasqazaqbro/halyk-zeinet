@@ -3,7 +3,7 @@ import React from "react";
 import Accordion, { data } from "@/shared/ui/Accordion/Accordion";
 import Heading from "@/shared/ui/Typography/Heading/Heading";
 
-const Faq = () => {
+export const Faq = () => {
   const [activeIndex, setActiveIndex] = React.useState(null);
 
   const handleItemClick = (index: any) => {
@@ -37,4 +37,3 @@ const Faq = () => {
   );
 };
 
-export default Faq;

@@ -12,7 +12,7 @@ import Tg2 from "./assets/entitiy/tg2.png";
 import Tg3 from "./assets/entitiy/tg3.png";
 import Arrow1 from "./assets/entitiy/arrow.png";
 import Arrow2 from "./assets/entitiy/arrow2.png";
-import { cn } from "@nextui-org/react";
+import cn from "classnames";
 
 export default function Annuity() {
   const [startAnimation, setStartAnimation] = React.useState(false);
