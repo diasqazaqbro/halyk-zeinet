@@ -117,7 +117,7 @@ const Oppv = () => {
             styles.img2,
             isReverseFaded ? styles.fadeOut2 : ""
           )}
-          src={"/Dias2.png"}
+          src={"/Dias2.webp"}
           width={828}
           height={787}
           alt="Азамат2"
@@ -318,7 +318,7 @@ const Oppv = () => {
               styles.img2__mob,
               isImageSlidingOutMob ? styles.slideOutMob : ""
             )}
-            src={"/Dias2.png"}
+            src={"/Dias2.webp"}
             width={828}
             priority
             height={787}

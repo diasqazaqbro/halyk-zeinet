@@ -14,13 +14,7 @@ const config: Config = {
       mlg: { max: "1024px" },
       xl: "1512px",
     },
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
+    extend: {},
   },
   plugins: [nextui()],
 };
