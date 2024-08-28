@@ -19,10 +19,20 @@ export default function Security() {
                 <h2 className={cn("mb-[6px]", styles.card__info)}>
                   Финансовые показатели
                 </h2>
-                <Heading component="p">
-                  Показатели фонда гарантирования выплат. Компания является
-                  участником Фонда гарантирования страховых выплат.
-                </Heading>
+                <div className={styles.download}>Скачать</div>
+              </div>
+            </div>
+            <div className={styles.item}>
+              <div className={styles.item__text}>
+                <h2 className={cn("mb-[6px]", styles.card__info)}>Лицензия</h2>
+                <div className={styles.download}>Скачать</div>
+              </div>
+            </div>
+            <div className={styles.item}>
+              <div className={styles.item__text}>
+                <h2 className={cn("mb-[6px]", styles.card__info)}>
+                  Сертификаты Соотвествия
+                </h2>
                 <div className={styles.download}>Скачать</div>
               </div>
             </div>
@@ -31,29 +41,28 @@ export default function Security() {
                 <h2 className={cn("mb-[6px]", styles.card__info)}>
                   Справка о гос. регистрации
                 </h2>
-                <Heading component="p">
-                  Дополнительная защита от немецкого перестраховочного общества
-                  General Reinsurance AG (Рейтинг S&P: AA+ , Рейтинг Moody`s:
-                  Aal)
-                </Heading>
+
                 <div className={styles.download}>Скачать</div>
               </div>
             </div>
           </div>
           <div className="w-[24%] mlg:w-full">
-            <div className={cn(styles.item, "overflow-hidden h-[95%]")}>
+            <div className={cn(styles.item, "overflow-hidden h-[96.5%]")}>
               <div className="flex flex-col">
                 <div className={styles.item__text}>
                   <h2 className={cn("mb-[6px]", styles.card__info)}>
-                    Сертификаты
+                    Фонд гарантирования страховых выплат
                   </h2>
-                  <Heading component="p">Перестраховочная защита</Heading>
+                  <Heading component="p">
+                    Наша компания является участником Фонда гарантирования
+                    страховых выплат
+                  </Heading>
                   <div className={styles.download}>Скачать</div>
                 </div>
                 <Image
                   className={cn(
                     styles.img,
-                    "relative top-[5rem] mlg:top-[0.5rem]"
+                    "relative top-[3rem] mlg:top-[0.5rem]"
                   )}
                   alt="tg"
                   src={image}
@@ -62,12 +71,15 @@ export default function Security() {
             </div>
           </div>
           <div className="w-[24%] mlg:w-full">
-            <div className={styles.item}>
+            <div className={cn(styles.item, "h-[96.5%]")}>
               <div className={styles.item__text}>
-                <h2 className={cn("mb-[6px]", styles.card__info)}>Лицензия</h2>
+                <h2 className={cn("mb-[6px]", styles.card__info)}>
+                  Перестраховочная защита
+                </h2>
                 <Heading component="p">
-                  Наша компания является участником Фонда гарантирования
-                  страховых выплат.
+                  Дополнительная защита от немецкого перестраховочного общества
+                  General Reinsurance AG (Рейтинг S&P: AA+ , Рейтинг Moody's:
+                  Aal)
                 </Heading>
                 <div className={styles.download}>Скачать</div>
               </div>
