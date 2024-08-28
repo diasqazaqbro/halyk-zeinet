@@ -6,9 +6,24 @@ import "./styles/globals.scss";
 import Head from "next/head";
 
 const SfPro = localFont({
-  src: "../../public/fonts/SF-Pro.ttf",
+  src: [
+    {
+      path: "../../public/fonts/SF-Pro.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/SF-Pro.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/SF-Pro.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   display: "swap",
-  preload: true,
 });
 
 export const metadata: Metadata = {
