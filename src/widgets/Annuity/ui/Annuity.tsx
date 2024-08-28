@@ -131,7 +131,6 @@ export default function Annuity() {
             src={MainImage}
             width={396}
             height={672}
-            priority
             alt="annuity"
           />
           <Image
@@ -139,8 +138,8 @@ export default function Annuity() {
               [styles.img__mobilefadeOut]: startAnimationMobile,
             })}
             src={MainImage2}
-            loading="lazy"
             width={382}
+            loading="lazy"
             height={484}
             alt="annuity"
           />
