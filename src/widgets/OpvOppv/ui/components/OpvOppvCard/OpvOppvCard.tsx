@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styles from "./styles.module.scss";
 import Heading from "@/shared/ui/Typography/Heading/Heading";
 import cn from "classnames";
-import Aida from "../../assets/aida.png";
+import Aida from "../../assets/aida.webp";
 import Image from "next/image";
 
 interface ICard {
