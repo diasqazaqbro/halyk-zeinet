@@ -5,7 +5,7 @@ import cn from "classnames";
 interface IHeadingProps {
   children?: React.ReactNode | string;
   className?: string;
-  component: "h1" | "h2" | "h3" | "p";
+  component: "h1" | "h2" | "p";
   dangerouslySetInnerHTML?: {
     __html: string;
   };
@@ -14,7 +14,6 @@ interface IHeadingProps {
 const componentMap = {
   h1: styles.heading_1,
   h2: styles.heading_2,
-  h3: styles.heading_3,
   p: styles.text,
 };
 

@@ -1,69 +1,59 @@
 .nav {
   display: flex;
+
   &__link {
     font-weight: 700;
     padding: 0.75rem 1.625rem;
     font-size: 1.25rem;
+    position: relative; 
   }
 }
 
-nav.nav a,
-nav.nav__link a {
+.nav a {
   position: relative;
 }
 
-nav.nav a:after,
-nav.nav__link a:after {
+.nav a:after {
   position: absolute;
   bottom: 11px;
   left: 0;
   right: 0;
   margin: auto;
-  width: 0%;
-  content: ".";
+  width: 0;
+  content: "";
   color: transparent;
   background: #fff;
   height: 1px;
   transition: width 0.3s ease-in-out;
 }
 
-nav.nav a:hover:after {
+.nav a:hover:after {
   width: 60%;
 }
 
-nav.nav__link a {
-  transition: all 2s;
+.nav__link a {
+  transition: color 0.3s ease-in-out; 
 }
 
-nav.nav__link a:after {
-  text-align: left;
-  content: ".";
-  margin: 0;
-  opacity: 0;
+.nav__link a:after {
+  position: absolute; 
+  bottom: 11px;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 1px;
+  content: "";
+  background: #fff;
+  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-nav.nav__link a:hover {
+.nav__link a:hover {
   color: #fff;
-  z-index: 1;
 }
 
-nav.nav__link a:hover:after {
-  z-index: -10;
-  animation: nav__link 1s forwards;
+.nav__link a:hover:after {
+  width: 100%;
   opacity: 1;
-}
-
-@keyframes nav__link {
-  0% {
-    width: 0%;
-    height: 1px;
-    background: #fff;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-    background: #fff;
-  }
 }
 
 @media (max-width: 1024px) {

@@ -9,7 +9,7 @@ interface BenefitsProps {
   icon: React.ReactElement;
   width?: string;
 }
-
+// 
 const BenefitsCard = ({ title, desc, icon, width }: BenefitsProps) => {
   return (
     <div className={styles.card}>
