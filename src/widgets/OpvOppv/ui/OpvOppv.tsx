@@ -65,10 +65,7 @@ const OpvOppv = () => {
             </Heading>
 
             <div className={styles.input__container}>
-              <CodeInput
-                count={2}
-                onChange={(otp: string) => setOtp(otp)}
-              />
+              <CodeInput count={2} onChange={(otp: string) => setOtp(otp)} />
             </div>
             <div className={styles.subtitle}>
               Минимальные накопления для заключения пенсионного аннуитета в 2024
@@ -183,8 +180,8 @@ const OpvOppv = () => {
                 <path
                   d="M15 2L2.70711 14.2929C2.31658 14.6834 2.31658 15.3166 2.70711 15.7071L15 28"
                   stroke="#FAAE17"
-                  stroke-width="4"
-                  stroke-linecap="round"
+                  strokeWidth="4"
+                  strokeLinecap="round"
                 />
               </svg>
             </button>

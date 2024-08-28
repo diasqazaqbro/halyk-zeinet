@@ -26,6 +26,7 @@ const OpvOppvCard: FC<ICard> = ({ title, img, handleClick }) => {
             },
             styles.img
           )}
+          priority
           src={img}
           alt={title}
         />

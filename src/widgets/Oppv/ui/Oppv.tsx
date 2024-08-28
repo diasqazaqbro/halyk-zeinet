@@ -107,6 +107,7 @@ const Oppv = () => {
     <section id="oppv" className={styles.oppv}>
       <div className="container flex justify-between relative mmd:flex-col">
         <Image
+          priority
           className={cn(
             "absolute z-[2]",
             {
@@ -306,10 +307,10 @@ const Oppv = () => {
               slideLeftMob ? styles.slideLeftMob : styles.img,
               { [styles.dnone]: fadeOutComplete }
             )}
+            priority
             width={840}
             height={805}
             src="/Dias.png"
-            loading="lazy"
             alt="Азаматик"
           />
           <Image
@@ -319,7 +320,7 @@ const Oppv = () => {
             )}
             src={"/Dias2.png"}
             width={828}
-            loading="lazy"
+            priority
             height={787}
             alt="Азамат2"
           />
