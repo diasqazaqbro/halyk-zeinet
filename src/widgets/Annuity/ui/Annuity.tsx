@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import MainImage from "./assets/image.png";
@@ -12,17 +12,17 @@ import Tg2 from "./assets/entitiy/tg2.png";
 import Tg3 from "./assets/entitiy/tg3.png";
 import Arrow1 from "./assets/entitiy/arrow.png";
 import Arrow2 from "./assets/entitiy/arrow2.png";
-import Heading from "@/shared/ui/Typography/Heading/Heading";
 import { cn } from "@nextui-org/react";
 
 export default function Annuity() {
-  const [startAnimation, setStartAnimation] = useState(false);
-  const [showTextStage1, setShowTextStage1] = useState(false);
-  const [showTextStage2, setShowTextStage2] = useState(false);
-  const [showTextStage3, setShowTextStage3] = useState(false);
-  const [showTextStage4, setShowTextStage4] = useState(false);
-  const [showSecondImage, setShowSecondImage] = useState(false);
-  const [showSecondImageMobile, setShowSecondImageMobile] = useState(false);
+  const [startAnimation, setStartAnimation] = React.useState(false);
+  const [showTextStage1, setShowTextStage1] = React.useState(false);
+  const [showTextStage2, setShowTextStage2] = React.useState(false);
+  const [showTextStage3, setShowTextStage3] = React.useState(false);
+  const [showTextStage4, setShowTextStage4] = React.useState(false);
+  const [showSecondImage, setShowSecondImage] = React.useState(false);
+  const [showSecondImageMobile, setShowSecondImageMobile] =
+    React.useState(false);
 
   const handleStartAnimation = () => {
     setStartAnimation(true);
@@ -47,7 +47,7 @@ export default function Annuity() {
     setShowSecondImage(false);
   };
 
-  const [startAnimationMobile, setStartAnimationMobile] = useState(false);
+  const [startAnimationMobile, setStartAnimationMobile] = React.useState(false);
 
   const handleStartAnimationMobile = () => {
     if (!startAnimationMobile) {

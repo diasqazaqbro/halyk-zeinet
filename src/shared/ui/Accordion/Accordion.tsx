@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import AccordionOpen from "../Icon/Faq/AccordionOpen";
 import cn from "classnames";
 import styles from "./styles.module.scss";
@@ -53,7 +53,7 @@ export default function Accordion({
   answer,
   question,
 }: AccordionProps) {
-  const contentHeight = useRef<HTMLDivElement>(null);
+  const contentHeight = React.useRef<HTMLDivElement>(null);
 
   const formatAnswerWithLineBreaks = (answer: any) => {
     return answer.split("\n").map((line: any, index: any) => (
