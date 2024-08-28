@@ -8,12 +8,15 @@ import Head from "next/head";
 const SfPro = localFont({
   src: "../../public/fonts/SF-Pro.ttf",
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
   title: "Halyk Zeinet - Pension Annuity Service",
-  description: "Explore pension annuity plans with Halyk Zeinet, your trusted partner in financial security.",
-  keywords: "Halyk Zeinet, pension annuity, financial security, retirement planning, insurance",
+  description:
+    "Explore pension annuity plans with Halyk Zeinet, your trusted partner in financial security.",
+  keywords:
+    "Halyk Zeinet, pension annuity, financial security, retirement planning, insurance",
 };
 
 export default function RootLayout({

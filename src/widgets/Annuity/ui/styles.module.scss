@@ -206,9 +206,6 @@
     .textStage2 {
       margin-top: -20px;
     }
-    .textStage3 {
-      // margin-top: 130px;
-    }
 
     .textStage1,
     .textStage2,
@@ -550,12 +547,12 @@
   position: absolute; /* Position it absolutely */
   right: -100%; /* Start it off-screen to the right */
   bottom: 0;
-  visibility: hidden;  
+  visibility: hidden;
   transition: right 1s ease-in-out, visibility 1s ease-in-out;
 }
 
 .appearFromRight.moveIn {
   right: 100px;
-  visibility: visible; 
+  visibility: visible;
   transition: right 1s ease-in-out, opacity 1s ease-in-out, visibility 0s 0s;
 }

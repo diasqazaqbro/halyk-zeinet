@@ -309,6 +309,7 @@ const Oppv = () => {
             width={840}
             height={805}
             src="/Dias.png"
+            loading="lazy"
             alt="Азаматик"
           />
           <Image
@@ -318,6 +319,7 @@ const Oppv = () => {
             )}
             src={"/Dias2.png"}
             width={828}
+            loading="lazy"
             height={787}
             alt="Азамат2"
           />
