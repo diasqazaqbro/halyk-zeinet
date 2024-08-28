@@ -7,11 +7,7 @@ import Button, { ButtonSize } from "@/shared/ui/Button/Button";
 import Image from "next/image";
 import Input from "@/shared/ui/Input/Input";
 import { sendMail } from "@/shared/api/sendMail";
-// import dynamic from "next/dynamic";
 
-// const ModalComponent = dynamic(() => import("@/shared/ui/Modal/Modal"), {
-//   ssr: false,
-// });
 const ModalComponent = React.lazy(() => import("@/shared/ui/Modal/Modal"));
 
 const PensionAnnuity = () => {
@@ -19,7 +15,6 @@ const PensionAnnuity = () => {
   const [name, setName] = React.useState<string>("");
   const [age, setAge] = React.useState<string>("");
   const [number, setNumber] = React.useState<string>("");
-  const [isLoaded, setIsLoaded] = React.useState<boolean>(false);
 
   const [errors, setErrors] = React.useState<{
     name?: string;
@@ -87,19 +82,18 @@ const PensionAnnuity = () => {
         </div>
         <div className="mb-[-1px]">
           <Image
-            className={cn(styles.img, isLoaded ? styles.img_loaded : "")}
+            className={styles.img}
             width={724}
             height={738}
             src="/Laura.png"
             alt="Лаура"
             // loading="lazy"
             sizes="(max-width: 320px) 280px, 
-         (max-width: 480px) 480px, 
-         (max-width: 768px) 724px, 
-         (max-width: 1200px) 1000px, 
-         1448px"
+          (max-width: 480px) 480px, 
+          (max-width: 768px) 724px, 
+          (max-width: 1200px) 1000px, 
+          1448px"
             priority={true}
-            onLoad={() => setIsLoaded(true)}
           />
         </div>
       </div>
