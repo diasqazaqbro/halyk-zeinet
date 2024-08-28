@@ -5,7 +5,6 @@ import styles from "./styles.module.scss";
 export enum ButtonSize {
   M = "size_m",
   L = "size_l",
-  XL = "size_xl",
 }
 
 interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
