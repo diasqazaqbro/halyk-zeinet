@@ -1,9 +1,7 @@
-import dynamic from "next/dynamic";
 import React, { lazy, Suspense } from "react";
 
-const PensionAnnuity = dynamic(
-  () => import("@/widgets/PensionAnnuity/ui/PensionAnnuity"),
-  { ssr: false }
+const PensionAnnuity = React.memo(
+  lazy(() => import("@/widgets/PensionAnnuity/ui/PensionAnnuity"))
 );
 const Annuity = lazy(() => import("@/widgets/Annuity/ui/Annuity"));
 const Oppv = lazy(() => import("@/widgets/Oppv/ui/Oppv"));
@@ -11,7 +9,7 @@ const OpvOppv = lazy(() => import("@/widgets/OpvOppv/ui/OpvOppv"));
 const Benefits = lazy(() => import("@/widgets/Benefits/ui/Benefits"));
 const Security = lazy(() => import("@/widgets/Security/ui/Security"));
 const Faq = lazy(() => import("@/widgets/FAQ/ui/FAQ"));
-// 
+
 export default function MainPage() {
   return (
     <>
