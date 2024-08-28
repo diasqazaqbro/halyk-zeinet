@@ -8,11 +8,11 @@ import Image from "next/image";
 import Input from "@/shared/ui/Input/Input";
 import { sendMail } from "@/shared/api/sendMail";
 // import dynamic from "next/dynamic";
-import ModalComponent from "@/shared/ui/Modal/Modal";
 
 // const ModalComponent = dynamic(() => import("@/shared/ui/Modal/Modal"), {
 //   ssr: false,
 // });
+const ModalComponent = React.lazy(() => import("@/shared/ui/Modal/Modal"));
 
 const PensionAnnuity = () => {
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
@@ -103,60 +103,63 @@ const PensionAnnuity = () => {
           />
         </div>
       </div>
-      <ModalComponent
-        className="p-8"
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      >
-        <div className="flex flex-col gap-8">
-          <h1 className={styles.modal__title}>Оставьте заявку</h1>
-          <label>
-            <Input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Имя"
-              classField={styles.modal__input}
-              className={styles.modal__inputinside}
-            />
-            {errors.name && <p className={styles.error}>{errors.name}</p>}{" "}
-          </label>
-          <label>
-            <Input
-              value={number}
-              onChange={(e) => setNumber(e.target.value)}
-              placeholder="Телефон"
-              classField={styles.modal__input}
-              className={styles.modal__inputinside}
-            />
-            {errors.number && <p className={styles.error}>{errors.number}</p>}{" "}
-          </label>
-          <label>
-            <Input
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-              placeholder="Возраст"
-              classField={styles.modal__input}
-              className={styles.modal__inputinside}
-            />
-            {errors.age && <p className={styles.error}>{errors.age}</p>}{" "}
-          </label>
-          <p className={styles.modal__text2}>
-            Ваши данные будут использованы для связи с Вами и не будут переданы
-            третьим лицам. При заполнении формы вы даете свое согласие на
-            обработку персональных данных и маркетинговых активностей.
-          </p>
-          <Button
-            onClick={handleSendEmail}
-            size={ButtonSize.L}
-            className={cn(
-              "mx-auto md:w-[50%] cursor-pointer",
-              styles.btn__message
-            )}
-          >
-            Оставить заявку
-          </Button>
-        </div>
-      </ModalComponent>
+      <React.Suspense fallback={<div className="text-center">Loading...</div>}>
+        <ModalComponent
+          className="p-8"
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        >
+          <div className="flex flex-col gap-8">
+            <h1 className={styles.modal__title}>Оставьте заявку</h1>
+            <label>
+              <Input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Имя"
+                classField={styles.modal__input}
+                className={styles.modal__inputinside}
+              />
+              {errors.name && <p className={styles.error}>{errors.name}</p>}{" "}
+            </label>
+            <label>
+              <Input
+                value={number}
+                onChange={(e) => setNumber(e.target.value)}
+                placeholder="Телефон"
+                classField={styles.modal__input}
+                className={styles.modal__inputinside}
+              />
+              {errors.number && <p className={styles.error}>{errors.number}</p>}{" "}
+            </label>
+            <label>
+              <Input
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                placeholder="Возраст"
+                classField={styles.modal__input}
+                className={styles.modal__inputinside}
+              />
+              {errors.age && <p className={styles.error}>{errors.age}</p>}{" "}
+            </label>
+            <p className={styles.modal__text2}>
+              Ваши данные будут использованы для связи с Вами и не будут
+              переданы третьим лицам. При заполнении формы вы даете свое
+              согласие на обработку персональных данных и маркетинговых
+              активностей.
+            </p>
+            <Button
+              onClick={handleSendEmail}
+              size={ButtonSize.L}
+              className={cn(
+                "mx-auto md:w-[50%] cursor-pointer",
+                styles.btn__message
+              )}
+            >
+              Оставить заявку
+            </Button>
+          </div>
+        </ModalComponent>
+      </React.Suspense>
     </section>
   );
 };
