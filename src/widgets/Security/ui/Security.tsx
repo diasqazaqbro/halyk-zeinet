@@ -1,8 +1,8 @@
 import Heading from "@/shared/ui/Typography/Heading/Heading";
 import styles from "./styles.module.scss";
+import Image from "next/image";
 import cn from "classnames";
 import image from "./assets/tg.png";
-import Image from "next/image";
 
 export default function Security() {
   return (

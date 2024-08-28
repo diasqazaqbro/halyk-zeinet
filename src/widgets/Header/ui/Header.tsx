@@ -5,7 +5,7 @@ import LogoDesktop from "@/shared/ui/Icon/Logo/LogoDesk";
 import { Navbar } from "@/entities/Navbar";
 import Button, { ButtonSize } from "@/shared/ui/Button/Button";
 import Link from "next/link";
-import { MenuNavbar } from "@/entities/Navbar/ui/component/NavbarMob";
+import { MenuNavbar } from "@/entities/Navbar/ui/component/NavbarMob/";
 import LogoMob from "@/shared/ui/Icon/Logo/LogoMob";
 
 export default function Header() {

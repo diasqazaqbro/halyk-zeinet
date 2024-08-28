@@ -1,5 +1,3 @@
-import { Benefits } from "@/widgets/Benefits/ui/Benefits";
-import { Faq } from "@/widgets/FAQ/ui/FAQ";
 import React, { lazy, Suspense } from "react";
 
 const PensionAnnuity = React.memo(
@@ -8,7 +6,9 @@ const PensionAnnuity = React.memo(
 const Annuity = React.memo(lazy(() => import("@/widgets/Annuity/ui/Annuity")));
 const Oppv = React.memo(lazy(() => import("@/widgets/Oppv/ui/Oppv")));
 const OpvOppv = React.memo(lazy(() => import("@/widgets/OpvOppv/ui/OpvOppv")));
+const Benefits = lazy(() => import("@/widgets/Benefits/ui/Benefits"));
 const Security = lazy(() => import("@/widgets/Security/ui/Security"));
+const Faq = lazy(() => import("@/widgets/FAQ/ui/FAQ"));
 
 export default function MainPage() {
   return (
@@ -35,7 +35,11 @@ export default function MainPage() {
         <OpvOppv />
       </Suspense>
 
-      <Benefits />
+      <Suspense
+        fallback={<div className="text-center">Loading Benefits...</div>}
+      >
+        <Benefits />
+      </Suspense>
 
       <Suspense
         fallback={<div className="text-center">Loading Security...</div>}
@@ -43,7 +47,9 @@ export default function MainPage() {
         <Security />
       </Suspense>
 
-      <Faq />
+      <Suspense fallback={<div className="text-center">Loading FAQ...</div>}>
+        <Faq />
+      </Suspense>
     </>
   );
 }
