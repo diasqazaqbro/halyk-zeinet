@@ -1,16 +1,9 @@
-import dynamic from "next/dynamic";
 import React, { lazy, Suspense } from "react";
 
-const PensionAnnuity = dynamic(
-  () => import("@/widgets/PensionAnnuity/ui/PensionAnnuity"),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="text-center">Loading Pension Annuity...</div>
-    ),
-  }
+const PensionAnnuity = React.memo(
+  lazy(() => import("@/widgets/PensionAnnuity/ui/PensionAnnuity"))
 );
-const Annuity = React.memo(lazy(() => import("@/widgets/Annuity/ui/Annuity")));
+const Annuity = lazy(() => import("@/widgets/Annuity/ui/Annuity"));
 const Oppv = React.memo(lazy(() => import("@/widgets/Oppv/ui/Oppv")));
 const OpvOppv = React.memo(lazy(() => import("@/widgets/OpvOppv/ui/OpvOppv")));
 const Benefits = lazy(() => import("@/widgets/Benefits/ui/Benefits"));
@@ -20,11 +13,11 @@ const Faq = lazy(() => import("@/widgets/FAQ/ui/FAQ"));
 export default function MainPage() {
   return (
     <>
-      {/* <Suspense
+      <Suspense
         fallback={<div className="text-center">Loading Pension Annuity...</div>}
-      > */}
-      <PensionAnnuity />
-      {/* </Suspense> */}
+      >
+        <PensionAnnuity />
+      </Suspense>
 
       <Suspense
         fallback={<div className="text-center">Loading Annuity...</div>}
