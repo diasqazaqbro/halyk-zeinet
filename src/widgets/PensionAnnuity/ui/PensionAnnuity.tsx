@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import cn from "classnames";
 import styles from "./styles.module.scss";
 import Heading from "@/shared/ui/Typography/Heading/Heading";
@@ -10,12 +10,13 @@ import Input from "@/shared/ui/Input/Input";
 import { sendMail } from "@/shared/api/sendMail";
 //
 const PensionAnnuity = () => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [name, setName] = useState<string>("");
-  const [age, setAge] = useState<string>("");
-  const [number, setNumber] = useState<string>("");
+  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+  const [name, setName] = React.useState<string>("");
+  const [age, setAge] = React.useState<string>("");
+  const [number, setNumber] = React.useState<string>("");
+  const [isLoaded, setIsLoaded] = React.useState<boolean>(false);
 
-  const [errors, setErrors] = useState<{
+  const [errors, setErrors] = React.useState<{
     name?: string;
     age?: string;
     number?: string;
@@ -81,11 +82,13 @@ const PensionAnnuity = () => {
         </div>
         <div className="mb-[-1px]">
           <Image
-            className={styles.img}
+            className={cn(styles.img, isLoaded ? styles.img_loaded : "")}
             width={742}
             height={756}
             src={"/Laura.png"}
             alt="Лаура"
+            loading="lazy"
+            onLoad={() => setIsLoaded(true)}
           />
         </div>
       </div>

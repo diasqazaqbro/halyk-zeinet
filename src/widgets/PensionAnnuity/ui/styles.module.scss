@@ -23,6 +23,8 @@
 }
 
 .img {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
   max-width: 724px;
   position: relative;
 }
@@ -63,6 +65,10 @@
     line-height: normal;
     opacity: 0.4;
   }
+}
+
+.img_loaded {
+  opacity: 1;
 }
 
 .error {
