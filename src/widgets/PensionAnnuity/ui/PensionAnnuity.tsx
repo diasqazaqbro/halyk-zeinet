@@ -83,16 +83,16 @@ const PensionAnnuity = () => {
         <div className="mb-[-1px]">
           <Image
             className={styles.img}
-            width={730}
-            height={750}
+            width={724}
+            height={738}
             src="/Laura.webp"
             alt="Лаура"
-            priority
             sizes="(max-width: 320px) 280px, 
           (max-width: 480px) 480px, 
           (max-width: 768px) 724px, 
           (max-width: 1200px) 1000px, 
           1448px"
+            priority
           />
         </div>
       </div>
