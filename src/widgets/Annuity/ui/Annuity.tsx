@@ -139,7 +139,7 @@ export default function Annuity() {
               [styles.img__mobilefadeOut]: startAnimationMobile,
             })}
             src={MainImage2}
-            priority
+            loading="lazy"
             width={382}
             height={484}
             alt="annuity"
@@ -342,7 +342,6 @@ export default function Annuity() {
             src={MainImage3}
             width={617}
             height={704}
-            priority
             alt="annuity-mobile"
             className={styles.img}
           />
@@ -356,7 +355,7 @@ export default function Annuity() {
             src={MainImage4}
             width={360}
             height={339}
-            priority
+            loading="lazy"
             alt="annuity-mobile"
             className={styles.img__mobile}
           />

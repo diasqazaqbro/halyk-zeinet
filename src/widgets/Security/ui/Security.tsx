@@ -64,7 +64,6 @@ export default function Security() {
                     styles.img,
                     "relative top-[3rem] mlg:top-[0.5rem]"
                   )}
-                  priority={true}
                   alt="tg"
                   src={image}
                 />
