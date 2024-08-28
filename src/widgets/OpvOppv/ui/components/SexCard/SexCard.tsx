@@ -1,7 +1,5 @@
 import React, { FC } from "react";
 import styles from "./styles.module.scss";
-import Heading from "@/shared/ui/Typography/Heading/Heading";
-import Image from "next/image";
 
 interface ICard {
   type: "men" | "women";
@@ -26,10 +24,20 @@ const OpvOppvCard: FC<ICard> = ({ type, handleClick }) => {
           />
         </svg>
       ) : (
-        <svg className={styles.svg} width="49" height="79" viewBox="0 0 49 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M48.5 24.88C48.5 11.41 37.76 0.5 24.5 0.5C11.24 0.5 0.5 11.41 0.5 24.88C0.5 36.67 8.75 46.51 19.7 48.77V59.01H10.1V68.76H19.7V78.51H29.3V68.76H38.9V59.01H29.3V48.77C40.25 46.51 48.5 36.68 48.5 24.88ZM24.5 39.5C16.55 39.5 10.1 32.95 10.1 24.88C10.1 16.81 16.55 10.26 24.5 10.26C32.45 10.26 38.9 16.81 38.9 24.88C38.9 32.95 32.45 39.5 24.5 39.5Z" stroke="white" stroke-miterlimit="10"/>
+        <svg
+          className={styles.svg}
+          width="49"
+          height="79"
+          viewBox="0 0 49 79"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M48.5 24.88C48.5 11.41 37.76 0.5 24.5 0.5C11.24 0.5 0.5 11.41 0.5 24.88C0.5 36.67 8.75 46.51 19.7 48.77V59.01H10.1V68.76H19.7V78.51H29.3V68.76H38.9V59.01H29.3V48.77C40.25 46.51 48.5 36.68 48.5 24.88ZM24.5 39.5C16.55 39.5 10.1 32.95 10.1 24.88C10.1 16.81 16.55 10.26 24.5 10.26C32.45 10.26 38.9 16.81 38.9 24.88C38.9 32.95 32.45 39.5 24.5 39.5Z"
+            stroke="white"
+            stroke-miterlimit="10"
+          />
         </svg>
-        
       )}
       <div className={styles.title}>
         {type === "men" ? "мужской" : "женский"}
