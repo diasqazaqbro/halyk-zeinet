@@ -4,7 +4,9 @@ import React, { lazy, Suspense } from "react";
 const PensionAnnuity = React.memo(
   lazy(() => import("@/widgets/PensionAnnuity/ui/PensionAnnuity"))
 );
-const Annuity = React.memo(lazy(() => import("@/widgets/Annuity/ui/Annuity")));
+const Annuity = React.memo(
+  dynamic(() => import("@/widgets/Annuity/ui/Annuity"), { ssr: false })
+);
 const Oppv = React.memo(
   dynamic(() => import("@/widgets/Oppv/ui/Oppv"), { ssr: false })
 );
