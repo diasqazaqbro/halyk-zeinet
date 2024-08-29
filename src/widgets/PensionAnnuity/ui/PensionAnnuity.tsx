@@ -92,7 +92,7 @@ const PensionAnnuity = () => {
           (max-width: 768px) 724px, 
           (max-width: 1200px) 1000px, 
           1448px"
-            priority={true}
+            // priority={true}
           />
         </div>
       </div>
