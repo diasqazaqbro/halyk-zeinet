@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://halykzeinet.kz/_next/image?url=%2FLaura.webp&w=3840&q=75',
-        width: 800,
-        height: 600,
+        width: 1313,
+        height: 1338,
         alt: 'Пенсионный аннуитет в Казахстане',
       },
     ],
