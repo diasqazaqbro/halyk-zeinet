@@ -2,7 +2,9 @@ import dynamic from "next/dynamic";
 import React, { lazy, Suspense } from "react";
 
 const PensionAnnuity = React.memo(
-  lazy(() => import("@/widgets/PensionAnnuity/ui/PensionAnnuity"))
+  dynamic(() => import("@/widgets/PensionAnnuity/ui/PensionAnnuity"), {
+    ssr: false,
+  })
 );
 const Annuity = React.memo(lazy(() => import("@/widgets/Annuity/ui/Annuity")));
 

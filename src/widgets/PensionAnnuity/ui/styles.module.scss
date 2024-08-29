@@ -1,14 +1,7 @@
 .pension {
   overflow: hidden;
   padding-top: 120px;
-  background-image: url("/bg1.webp");
-  background-size: cover;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color: #00846e;
+  background: url("/bg1.webp") center center / cover no-repeat #00846e;
 
   &__inner {
     display: flex;
@@ -23,8 +16,6 @@
 }
 
 .img {
-  // opacity: 0;
-  // transition: opacity 0.3s ease-in-out;
   max-width: 724px;
   position: relative;
 }
@@ -32,9 +23,7 @@
 .modal {
   &__title {
     color: #282828;
-
     font-size: 42px;
-    font-style: normal;
     font-weight: 600;
     line-height: 46px;
     letter-spacing: -0.6px;
@@ -42,8 +31,7 @@
 
   &__input {
     border-bottom: 1px solid #d0d5dd;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    padding: 13px 0;
   }
 
   &__inputinside {
@@ -62,14 +50,9 @@
     text-align: center;
     font-size: 12px;
     font-weight: 400;
-    line-height: normal;
     opacity: 0.4;
   }
 }
-
-// .img_loaded {
-//   // opacity: 1;
-// }
 
 .error {
   color: red;
@@ -77,15 +60,14 @@
 }
 
 @media (max-width: 500px) {
-  .modal {
-    &__title {
-      font-size: 32px !important;
-    }
+  .modal__title {
+    font-size: 32px !important;
   }
 
   .btn__message {
     font-size: 14px;
   }
+
   .error {
     font-size: 12px;
   }
@@ -107,7 +89,6 @@
     .img {
       width: 100%;
       max-width: 100%;
-      // margin-left: -20px;
     }
 
     .button {
@@ -116,7 +97,7 @@
       z-index: 1;
       left: 50%;
       transform: translate(-50%, 0%);
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
 }
@@ -146,7 +127,7 @@
       z-index: 1;
       left: 50%;
       transform: translate(-50%, 0%);
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
 }
