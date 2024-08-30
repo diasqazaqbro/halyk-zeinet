@@ -1,38 +1,42 @@
 import type { Metadata } from "next";
 import { NextUIProvider } from "@nextui-org/react";
 import localFont from "next/font/local";
-import Header from "@/widgets/Header/ui/Header";
+import { Header } from "@/widgets/Header";
 import "./styles/globals.scss";
-import Head from "next/head";
 
 const SfPro = localFont({
-  src: [
-    {
-      path: "../../public/fonts/SF-Pro.ttf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/SF-Pro.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/SF-Pro.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+  src: "../../public/fonts/SF-Pro.ttf",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Halyk Zeinet - Pension Annuity Service",
-  description:
-    "Explore pension annuity plans with Halyk Zeinet, your trusted partner in financial security.",
-  keywords:
-    "Halyk Zeinet, pension annuity, financial security, retirement planning, insurance",
+  title: "Пенсионный аннуитет в Казахстане - Как оформить и получить выгоды",
+  description: "Узнайте, что такое пенсионный аннуитет в Казахстане, как его оформить и получить максимальные выгоды. Полная информация и советы.",
+  keywords: ["пенсионный аннуитет", "досрочное снятие денег с ЕНПФ", "перевод пенсии в страховую", "бонусы страховой компании", "пенсионные накопления"],
+  openGraph: {
+    title: "Пенсионный аннуитет в Казахстане - Как оформить и получить выгоды",
+    description: "Узнайте, что такое пенсионный аннуитет в Казахстане, как его оформить и получить максимальные выгоды. Полная информация и советы.",
+    url: "https://halykzeinet.kz/",
+    siteName: "Halyk Zeinet",
+    images: [
+      {
+        url: 'https://halykzeinet.kz/_next/image?url=%2FLaura.webp&w=3840&q=75',
+        width: 1313,
+        height: 1338,
+        alt: 'Пенсионный аннуитет в Казахстане',
+      },
+    ],
+    locale: 'ru',
+    type: 'website',
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Пенсионный аннуитет в Казахстане - Как оформить и получить выгоды",
+    description: "Узнайте, что такое пенсионный аннуитет в Казахстане, как его оформить и получить максимальные выгоды. Полная информация и советы.",
+    images: ["https://halykzeinet.kz/_next/image?url=%2FLaura.webp&w=3840&q=75"],
+  },
 };
+
 
 export default function RootLayout({
   children,
@@ -41,12 +45,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="canonical" href="https://www.halykzeinet.kz" />
-      </Head>
       <body className={SfPro.className}>
         <NextUIProvider>
           <Header />

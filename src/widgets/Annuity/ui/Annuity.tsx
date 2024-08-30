@@ -200,7 +200,6 @@ export default function Annuity() {
           </div>
         </div>
 
-        {/* First Text Stage */}
         <div>
           <div
             className={cn(styles.newTextContainer, styles.textStage1, {
@@ -272,66 +271,8 @@ export default function Annuity() {
               </button>
             </div>
           </div>
-          {/* <div
-            className={cn(styles.newTextContainer, styles.textStage2, {
-              [styles.fadeIn]: showTextStage2,
-            })}
-          ></div> */}
         </div>
 
-        {/* Second Text Stage */}
-
-        {/* Third Text Stage */}
-        {/* <div
-          className={cn(styles.newTextContainer, styles.textStage3, {
-            [styles.fadeIn]: showTextStage3,
-          })}
-        >
-          <h2 className={styles.sectionTitle}>Как это работает:</h2>
-          <ul className={styles.stepsList}>
-            <li>
-              <strong>Взнос:</strong> Аида делает один крупный взнос или
-              несколько взносов в страховую компанию.
-            </li>
-            <li>
-              <strong>Регулярные выплаты:</strong> Когда Аида выйдет на пенсию в
-              53 года, страховая компания начнёт платить ей определённую сумму
-              денег каждый месяц.
-            </li>
-            <li>
-              <strong>Пожизненно:</strong> Эти выплаты будут продолжаться на
-              протяжении всей её жизни, даже если ей будет 90 лет или больше.
-            </li>
-          </ul>
-        </div> */}
-        {/* <div
-          className={cn(styles.newTextContainer, styles.textStage4, {
-            [styles.fadeIn]: showTextStage4,
-          })}
-        >
-          <button
-            onClick={() => handleOffAnimate()}
-            className={styles.button__circle}
-          >
-            <svg
-              width="17"
-              height="30"
-              viewBox="0 0 17 30"
-              fill="none"
-              style={{ marginRight: 5 }}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15 2L2.70711 14.2929C2.31658 14.6834 2.31658 15.3166 2.70711 15.7071L15 28"
-                stroke="#FAAE17"
-                stroke-width="4"
-                stroke-linecap="round"
-              />
-            </svg>
-          </button>
-        </div> */}
-
-        {/* New Image appearing from the right */}
         <div
           className={cn(styles.appearFromRight, {
             [styles.moveIn]: showSecondImage,

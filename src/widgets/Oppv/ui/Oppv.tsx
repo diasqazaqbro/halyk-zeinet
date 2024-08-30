@@ -7,7 +7,7 @@ import cn from "classnames";
 import Image from "next/image";
 import GreenArrowRight from "@/shared/ui/Icon/Arrow/GreenArrowRight";
 import OrangeArrowRight from "@/shared/ui/Icon/Arrow/OrangeArrowRight";
-// 
+
 const Oppv = () => {
   const [isSlidingOut, setIsSlidingOut] = React.useState<boolean>(false);
   const [isSlidingIn, setIsSlidingIn] = React.useState<boolean>(false);
